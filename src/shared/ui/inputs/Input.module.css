@@ -1,0 +1,99 @@
+.input,
+.passwordInput {
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 1.33;
+	letter-spacing: -0.02em;
+	color: var(--color-white);
+	height: 44px;
+	border-radius: 12px;
+	padding: 0 14px;
+	width: 100%;
+	border: 1px solid rgba(249, 249, 249, 0.1);
+	background-color: var(--color-grey);
+	transition: border-color 250ms linear;
+}
+
+.passwordInput.valid {
+	border-color: var(--color-green);
+}
+
+.passwordInput.invalid {
+	border-color: var(--color-red);
+}
+
+.input.name {
+	padding-left: 59px;
+}
+
+.input.mail {
+	padding-left: 49px;
+}
+
+.inputWrapper {
+	position: relative;
+}
+
+.passwordInput {
+	padding-left: 78px;
+}
+
+.passwordWrapper,
+.passwordInputWrapper {
+	position: relative;
+}
+
+.label {
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 1.33;
+	letter-spacing: -0.02em;
+	text-align: center;
+	color: var(--color-light-grey);
+	position: absolute;
+	top: 50%;
+	left: 14px;
+	transform: translateY(-50%);
+}
+
+.passwordButton {
+	position: absolute;
+	top: 50%;
+	right: 13px;
+	transform: translateY(-50%);
+	background-color: transparent;
+}
+
+.icon {
+	width: 18px;
+	height: 18px;
+}
+
+@media screen and (min-width: 768px) {
+	.input,
+	.passwordInput {
+		height: 50px;
+		font-size: 14px;
+		line-height: 1.29;
+	}
+	.input.name {
+		padding-left: 65px;
+	}
+	.input.mail {
+		padding-left: 53px;
+	}
+	.passwordInput {
+		padding-left: 86px;
+	}
+	.label {
+		font-size: 14px;
+		line-height: 1.29;
+	}
+	.icon {
+		width: 20px;
+		height: 20px;
+	}
+	.passwordButton {
+		right: 18px;
+	}
+}
