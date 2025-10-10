@@ -14,6 +14,7 @@ import PrivateRoutes from "../shared/routes/PrivateRoutes";
 import { useDispatch, useSelector } from "react-redux";
 import { refreshUserThunk } from "../entities/user/model/operations";
 import { selectIsLoggedIn } from "../entities/user/model/selectors";
+import Header from "../modules/header/Header";
 
 function App() {
   const dispatch = useDispatch();
