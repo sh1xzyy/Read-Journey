@@ -1,7 +1,16 @@
-import React from "react";
+import Filters from "../../modules/filters/Filters";
+import css from "./RecommendedPage.module.css";
 
 const RecommendedPage = () => {
-  return <div>RecommendedPage</div>;
+  return (
+    <div>
+      <section className={css.firstSection}>
+        <div className="container">
+          <Filters />
+        </div>
+      </section>
+    </div>
+  );
 };
 
 export default RecommendedPage;
