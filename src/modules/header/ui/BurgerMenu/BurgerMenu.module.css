@@ -1,0 +1,29 @@
+.burgerMenuWrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  padding: 40px;
+  width: 200px;
+  background-color: var(--color-grey);
+  transform: translateX(100%);
+  transition: transform 0.4s linear;
+  z-index: 999;
+}
+
+.active {
+  transform: translateX(0);
+}
+
+.closeButton {
+  position: absolute;
+  right: 40px;
+  top: 34px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
