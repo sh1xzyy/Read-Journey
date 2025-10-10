@@ -10,7 +10,6 @@ import RecommendedBooks from "./ui/RecommendedBooks/RecommendedBooks";
 const CreateLibrary = () => {
   const dispatch = useDispatch();
   const [curPage, setCurPage] = useState(1);
-  console.log(curPage);
 
   useEffect(() => {
     (async () => {

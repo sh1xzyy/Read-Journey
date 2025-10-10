@@ -1,6 +1,5 @@
 .wrapper {
   height: 100%;
-  max-width: 335px;
   border-radius: 30px;
   background: var(--color-dark-grey);
 }
@@ -15,20 +14,16 @@
 }
 
 @media screen and (min-width: 768px) {
-  .wrapper {
-    max-width: 704px;
-  }
   .filtersWrapper {
     padding: 32px;
+  }
+  .recommendedWrapper {
+    padding: 40px;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .wrapper {
-    max-width: 600px;
-  }
   .filtersWrapper {
     padding: 40px 20px 20px 20px;
-    max-width: 353px;
   }
 }
