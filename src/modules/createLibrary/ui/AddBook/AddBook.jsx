@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import Input from "../../../../shared/ui/inputs/Input";
 import { addBookThunk } from "../../../../entities/book/model/operations";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { addBookSchema } from "./schema/AddBookSchema";
+import { addBookSchema } from "./schema/addBookSchema";
 
 const AddBook = () => {
   const dispatch = useDispatch();
