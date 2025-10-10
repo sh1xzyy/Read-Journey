@@ -1,0 +1,15 @@
+.bookQuoteWrapper {
+  display: flex;
+  gap: 14px;
+}
+
+.bookQuoteDescription {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  color: var(--color-light-grey);
+  span {
+    color: var(--color-white);
+  }
+}

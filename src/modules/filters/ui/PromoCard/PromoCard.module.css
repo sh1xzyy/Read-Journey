@@ -1,0 +1,94 @@
+.promoWrapper {
+  width: 100%;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: var(--color-grey);
+}
+
+.promoTitle {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  margin-bottom: 20px;
+}
+
+.promoList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.promoItem {
+  display: flex;
+  gap: 12px;
+}
+
+.promoNumber {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  span {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: var(--color-dark-grey);
+  }
+}
+
+.promoText {
+  max-width: 197px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+
+  .promoLabel {
+    color: var(--color-white);
+  }
+  .promoDescription {
+    color: var(--color-light-grey);
+  }
+}
+
+.buttonsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toLibraryLink {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  text-decoration: underline;
+  color: var(--color-light-grey);
+}
+
+.rightButton {
+  background-color: transparent;
+}
+
+@media screen and (min-width: 768px) {
+  .promoTitle {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+  .promoNumber {
+    min-width: 44px;
+    height: 44px;
+
+    span {
+      font-size: 20px;
+    }
+  }
+}

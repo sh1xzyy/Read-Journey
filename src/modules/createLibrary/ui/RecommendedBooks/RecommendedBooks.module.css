@@ -1,0 +1,73 @@
+.recommendedBooksTitle {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-light-grey-30);
+  margin-bottom: 14px;
+}
+
+.recommendedBooksList {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 11px;
+}
+
+.recommendedBooksItemImg {
+  object-fit: cover;
+  height: 107px;
+  width: 71px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+.recommendedBooksItemName {
+  max-width: 71px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-light-grey-30);
+  margin-bottom: 2px;
+}
+
+.recommendedBooksItemAuthor {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-light-grey);
+}
+
+.buttonsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toLibraryLink {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  text-decoration: underline;
+  color: var(--color-light-grey);
+}
+
+.rightButton {
+  background-color: transparent;
+}
+
+@media screen and (min-width: 768px) {
+  .recommendedBooksTitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .recommendedBooksList {
+    margin-bottom: 14px;
+  }
+}

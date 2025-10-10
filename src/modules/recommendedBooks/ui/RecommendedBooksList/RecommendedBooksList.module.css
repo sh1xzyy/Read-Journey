@@ -1,0 +1,46 @@
+.recommendedBooksList {
+  display: flex;
+  gap: 21px;
+}
+
+.recommendedBooksItemImg {
+  object-fit: cover;
+  height: 208px;
+  width: 137px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+.recommendedBooksItemName {
+  max-width: 71px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+}
+
+.recommendedBooksItemAuthor {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-light-grey);
+}
+
+@media screen and (min-width: 768px) {
+  .recommendedBooksList {
+    flex-wrap: wrap;
+    column-gap: 25px;
+    row-gap: 27px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .recommendedBooksList {
+    column-gap: 20px;
+  }
+}

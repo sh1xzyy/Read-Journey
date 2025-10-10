@@ -1,0 +1,29 @@
+.wrapper {
+  height: 100%;
+  border-radius: 30px;
+  background: var(--color-dark-grey);
+}
+
+.filtersWrapper {
+  padding: 20px;
+}
+
+.recommendedWrapper,
+.libraryWrapper {
+  padding: 40px 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .filtersWrapper {
+    padding: 32px;
+  }
+  .recommendedWrapper {
+    padding: 40px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .filtersWrapper {
+    padding: 40px 20px 20px 20px;
+  }
+}

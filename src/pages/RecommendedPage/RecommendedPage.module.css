@@ -1,0 +1,29 @@
+.firstSection {
+  padding: 10px 0 5px 0;
+}
+
+.section {
+  padding: 5px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .firstSection,
+  .section {
+    padding: 16px 0 8px 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .firstSection,
+  .section {
+    padding: 16px 0 0 0;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .recommendedPageWrapper {
+    display: grid;
+    grid-template-columns: 353px 1fr;
+    gap: 16px;
+  }
+}

@@ -11,11 +11,14 @@ const ReadingPage = lazy(() => import("../pages/ReadingPage/ReadingPage"));
 import Loader from "../shared/ui/loader/Loader";
 import RestrictedRoutes from "../shared/routes/RestrictedRoutes";
 import PrivateRoutes from "../shared/routes/PrivateRoutes";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { refreshUserThunk } from "../entities/user/model/operations";
+import { selectIsLoggedIn } from "../entities/user/model/selectors";
+import Header from "../modules/header/Header";
 
 function App() {
   const dispatch = useDispatch();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   useEffect(() => {
     dispatch(refreshUserThunk());
@@ -23,6 +26,7 @@ function App() {
 
   return (
     <>
+      {isLoggedIn && <Header />}
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route

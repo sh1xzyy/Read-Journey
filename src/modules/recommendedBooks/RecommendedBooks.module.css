@@ -1,0 +1,37 @@
+.recommendedHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.recommendedTitle {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+}
+
+.buttonsWrapper {
+  display: flex;
+  gap: 8px;
+}
+
+.leftButton,
+.rightButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(249, 249, 249, 0.2);
+  background-color: transparent;
+}
+
+@media screen and (min-width: 768px) {
+  .recommendedHeader {
+    margin-bottom: 20px;
+  }
+  .recommendedTitle {
+    font-size: 24px;
+    line-height: 1.14286;
+  }
+}

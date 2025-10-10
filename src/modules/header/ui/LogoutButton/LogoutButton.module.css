@@ -1,0 +1,21 @@
+.logoutButton {
+  height: 38px;
+  min-width: 91px;
+  padding: 10px 20px;
+  border: 1px solid rgba(249, 249, 249, 0.2);
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: 0.02em;
+  color: var(--color-white);
+  background-color: transparent;
+}
+
+@media screen and (min-width: 768px) {
+  .logoutButton {
+    min-width: 114px;
+    height: 42px;
+    padding: 12px 28px;
+  }
+}
