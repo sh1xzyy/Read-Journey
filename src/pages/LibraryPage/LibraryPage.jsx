@@ -1,7 +1,16 @@
-import React from "react";
+import CreateLibrary from "../../modules/createLibrary/CreateLibrary";
+import css from "./LibraryPage.module.css";
 
 const LibraryPage = () => {
-  return <div>LibraryPage</div>;
+  return (
+    <div>
+      <section className={css.firstSection}>
+        <div className="container">
+          <CreateLibrary />
+        </div>
+      </section>
+    </div>
+  );
 };
 
 export default LibraryPage;
