@@ -1,0 +1,63 @@
+.section {
+	padding: 20px 0;
+}
+
+.wrapper {
+	display: grid;
+	row-gap: 10px;
+}
+
+.logoWrapper {
+	margin-bottom: 40px;
+}
+
+.phoneCard {
+	max-height: 351px;
+	overflow: hidden;
+}
+
+.img {
+	margin-top: 20px;
+}
+
+.title {
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 1;
+	letter-spacing: 0.02em;
+	color: var(--color-white);
+	margin-bottom: 20px;
+	span {
+		color: rgba(227, 227, 227, 0.5);
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.section {
+		padding: 32px 0;
+	}
+	.logoWrapper {
+		margin-bottom: 157px;
+	}
+	.title {
+		font-size: 64px;
+		line-height: 0.93;
+		margin-bottom: 40px;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.logoWrapper {
+		margin-bottom: 107px;
+	}
+	.img {
+		margin-top: 80px;
+	}
+	.phoneCard {
+		max-height: 736px;
+	}
+	.wrapper {
+		grid-template-columns: repeat(2, 600px);
+		column-gap: 16px;
+	}
+}

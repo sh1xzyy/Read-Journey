@@ -1,6 +1,5 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import Loader from "../shared/ui/loader/Loader";
 const RegisterPage = lazy(() => import("../pages/RegisterPage/RegisterPage"));
 const LoginPage = lazy(() => import("../pages/LoginPage/LoginPage"));
 const HomePage = lazy(() => import("../pages/HomePage/HomePage"));
@@ -9,18 +8,71 @@ const RecommendedPage = lazy(() =>
 );
 const LibraryPage = lazy(() => import("../pages/LibraryPage/LibraryPage"));
 const ReadingPage = lazy(() => import("../pages/ReadingPage/ReadingPage"));
+import Loader from "../shared/ui/loader/Loader";
+import RestrictedRoutes from "../shared/routes/RestrictedRoutes";
+import PrivateRoutes from "../shared/routes/PrivateRoutes";
+import { useDispatch } from "react-redux";
+import { refreshUserThunk } from "../entities/user/model/operations";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshUserThunk());
+  }, [dispatch]);
+
   return (
     <>
       <Suspense fallback={<Loader />}>
         <Routes>
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/" element={<HomePage />} />
-          <Route path="/recommended" element={<RecommendedPage />} />
-          <Route path="/library" element={<LibraryPage />} />
-          <Route path="/reading" element={<ReadingPage />} />
+          <Route
+            path="/register"
+            element={
+              <RestrictedRoutes redirectTo="/">
+                <RegisterPage />
+              </RestrictedRoutes>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <RestrictedRoutes redirectTo="/">
+                <LoginPage />
+              </RestrictedRoutes>
+            }
+          />
+          <Route
+            path="/"
+            element={
+              <PrivateRoutes redirectTo="/login">
+                <HomePage />
+              </PrivateRoutes>
+            }
+          />
+          <Route
+            path="/recommended"
+            element={
+              <PrivateRoutes redirectTo="/login">
+                <RecommendedPage />
+              </PrivateRoutes>
+            }
+          />
+          <Route
+            path="/library"
+            element={
+              <PrivateRoutes redirectTo="/login">
+                <LibraryPage />
+              </PrivateRoutes>
+            }
+          />
+          <Route
+            path="/reading"
+            element={
+              <PrivateRoutes redirectTo="/login">
+                <ReadingPage />
+              </PrivateRoutes>
+            }
+          />
         </Routes>
       </Suspense>
     </>
