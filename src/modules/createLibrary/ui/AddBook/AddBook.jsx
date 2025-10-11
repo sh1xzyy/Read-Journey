@@ -31,28 +31,22 @@ const AddBook = () => {
     <form className={css.addBookForm} onSubmit={handleSubmit(onSubmit)}>
       <h2 className={css.addBookLabel}>Create your library:</h2>
       <div className={css.wrapper}>
-        <div>
-          <Input {...register("title")} label="Book title:" />
-          {errors.title && (
-            <span className={css.errorMsg}>{errors.title.message}</span>
-          )}
-        </div>
-        <div>
-          <Input {...register("author")} label="The author:" />
-          {errors.author && (
-            <span className={css.errorMsg}>{errors.author.message}</span>
-          )}
-        </div>
-        <div>
-          <Input
-            type="number"
-            {...register("totalPages")}
-            label="Number of pages:"
-          />
-          {errors.author && (
-            <span className={css.errorMsg}>{errors.author.message}</span>
-          )}
-        </div>
+        <Input
+          {...register("title")}
+          label="Book title:"
+          error={errors?.title}
+        />
+        <Input
+          {...register("author")}
+          label="The author:"
+          error={errors?.author}
+        />
+        <Input
+          type="number"
+          {...register("totalPages")}
+          label="Number of pages:"
+          error={errors?.totalPages}
+        />
       </div>
       <button className={css.submitBtn} type="submit">
         Add Book

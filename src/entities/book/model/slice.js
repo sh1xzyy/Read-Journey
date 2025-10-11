@@ -1,5 +1,10 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { getOwnBooksThunk, getRecommendedBooksThunk } from "./operations";
+import {
+  addBookThunk,
+  getOwnBooksThunk,
+  getRecommendedBooksThunk,
+  removeBookByIdThunk,
+} from "./operations";
 
 const initialState = {
   isLoading: false,
@@ -39,11 +44,20 @@ const initialState = {
       ],
     },
   ],
+  selectedBook: null,
 };
 
 const bookSlice = createSlice({
   name: "bookSlice",
   initialState,
+  reducers: {
+    getBooksDescription: (state, action) => {
+      const bookId = action.payload;
+      state.selectedBook = state.recommendedBooks?.results?.find(
+        (book) => book._id === bookId
+      );
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getRecommendedBooksThunk.fulfilled, (state, action) => {
@@ -54,10 +68,22 @@ const bookSlice = createSlice({
         state.isLoading = false;
         state.ownBooks = action.payload;
       })
+      .addCase(removeBookByIdThunk.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.ownBooks = state.ownBooks.filter(
+          (book) => book._id !== action.payload.id
+        );
+      })
+      .addCase(addBookThunk.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.ownBooks.push(action.payload);
+      })
       .addMatcher(
         isAnyOf(
           getRecommendedBooksThunk.pending,
           getOwnBooksThunk.pending,
+          getOwnBooksThunk.pending,
+          removeBookByIdThunk.pending,
           (state) => {
             state.isLoading = true;
           }
@@ -67,6 +93,8 @@ const bookSlice = createSlice({
         isAnyOf(
           getRecommendedBooksThunk.rejected,
           getOwnBooksThunk.rejected,
+          getOwnBooksThunk.rejected,
+          removeBookByIdThunk.rejected,
           (state) => {
             state.isLoading = false;
           }
@@ -76,3 +104,4 @@ const bookSlice = createSlice({
 });
 
 export default bookSlice.reducer;
+export const { getBooksDescription } = bookSlice.actions;

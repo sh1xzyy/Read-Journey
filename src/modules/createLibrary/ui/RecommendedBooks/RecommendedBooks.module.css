@@ -63,7 +63,24 @@
 
 .recommendedIcon {
   fill: transparent;
-  color: var(--color-white);
+  stroke: var(--color-white);
+}
+
+.recommendedBooksStubIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 208px;
+  width: 137px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background-color: var(--color-grey);
+}
+
+.recommendedBooksStubIcon {
+  width: 111px;
+  height: 72px;
+  fill: var(--color-light-grey);
 }
 
 @media screen and (min-width: 768px) {

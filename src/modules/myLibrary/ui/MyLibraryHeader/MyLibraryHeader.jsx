@@ -9,7 +9,15 @@ const MyLibraryHeader = ({ ownBooks }) => {
 
   const onChange = async (option) => {
     try {
-      await dispatch(getOwnBooksThunk({ status: option?.value })).unwrap();
+      const value = option?.value;
+
+      console.log(value);
+
+      if (value === "all") {
+        await dispatch(getOwnBooksThunk({})).unwrap();
+      } else {
+        await dispatch(getOwnBooksThunk({ status: value })).unwrap();
+      }
     } catch (error) {
       toast.error(error);
     }
