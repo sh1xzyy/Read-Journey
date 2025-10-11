@@ -8,13 +8,15 @@ const options = [
   { value: "all", label: "All books" },
 ];
 
-export default function CustomSelect() {
+export default function CustomSelect({ onChange }) {
   const { windowWidth } = useWindowWidth();
   const isTablet = windowWidth >= 768;
+
   return (
     <Select
       options={options}
       defaultValue={options[3]}
+      onChange={onChange}
       styles={{
         control: (base) => ({
           ...base,

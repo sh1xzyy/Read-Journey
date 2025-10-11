@@ -1,0 +1,80 @@
+.addToLibraryBtn {
+  height: 42px;
+  min-width: 141px;
+  padding: 12px 24px;
+  border: 1px solid rgba(249, 249, 249, 0.2);
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: 0.02em;
+  color: var(--color-white);
+  background-color: transparent;
+}
+.modalBookDescriptionItemImg {
+  object-fit: cover;
+  height: 213px;
+  width: 140px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+.modalBookDescriptionTextWrapper {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modalBookDescriptionItemName {
+  max-width: 317px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  margin-bottom: 2px;
+}
+
+.modalBookDescriptionItemAuthor {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.6667;
+  letter-spacing: -0.02em;
+  color: var(--color-light-grey);
+  margin-bottom: 4px;
+}
+
+.modalBookDescriptionTotalPage {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+}
+
+.modalBookDescriptionIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 224px;
+  width: 340px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  background-color: var(--color-grey);
+}
+
+.modalBookDescriptionIcon {
+  width: 174px;
+  height: 112px;
+  fill: var(--color-light-grey);
+}
+
+@media screen and (min-width: 768px) {
+  .modalBookDescriptionItemImg {
+    height: 233px;
+    width: 153px;
+  }
+
+  .modalBookDescriptionTextWrapper {
+    margin-bottom: 32px;
+  }
+}

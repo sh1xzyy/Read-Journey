@@ -30,18 +30,16 @@ const FiltersForm = () => {
     <form className={css.filtersForm} onSubmit={handleSubmit(onSubmit)}>
       <h2 className={css.filtersLabel}>Filters:</h2>
       <div className={css.wrapper}>
-        <div>
-          <Input {...register("title")} label="Book title:" />
-          {errors.title && (
-            <span className={css.errorMsg}>{errors.title.message}</span>
-          )}
-        </div>
-        <div>
-          <Input {...register("author")} label="The author:" />
-          {errors.author && (
-            <span className={css.errorMsg}>{errors.author.message}</span>
-          )}
-        </div>
+        <Input
+          {...register("title")}
+          label="Book title:"
+          error={errors.title}
+        />
+        <Input
+          {...register("author")}
+          label="The author:"
+          error={errors.author}
+        />
       </div>
       <button className={css.submitBtn} type="submit">
         To apply

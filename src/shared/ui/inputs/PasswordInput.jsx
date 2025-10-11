@@ -1,5 +1,4 @@
-import { useState, useEffect, forwardRef } from "react";
-import clsx from "clsx";
+import { useState, forwardRef } from "react";
 import css from "./Input.module.css";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { PiWarningCircleBold } from "react-icons/pi";
@@ -8,18 +7,6 @@ import { IoCheckmarkCircleOutline } from "react-icons/io5";
 const PasswordInput = forwardRef(
   ({ error, isSubmitted, value, onChange, ...props }, ref) => {
     const [isPasswordOpen, setIsPasswordOpen] = useState(false);
-    const [hasChanged, setHasChanged] = useState(false);
-
-    useEffect(() => {
-      if (isSubmitted && value) {
-        setHasChanged(true);
-      } else if (!isSubmitted) {
-        setHasChanged(false);
-      }
-    }, [value, isSubmitted]);
-
-    const borderClass =
-      isSubmitted && !hasChanged ? (error ? css.invalid : css.valid) : "";
 
     return (
       <div className={css.passwordWrapper}>
@@ -27,11 +14,10 @@ const PasswordInput = forwardRef(
           <input
             ref={ref}
             type={isPasswordOpen ? "text" : "password"}
-            className={clsx(css.passwordInput, borderClass)}
-            value={value}
+            className={css.passwordInput}
+            value={value ?? ""}
             onChange={(e) => {
-              onChange(e);
-              setHasChanged(true);
+              if (typeof onChange === "function") onChange(e);
             }}
             {...props}
           />
@@ -43,7 +29,7 @@ const PasswordInput = forwardRef(
           className={css.passwordButton}
           onClick={() => setIsPasswordOpen((prev) => !prev)}
         >
-          {!isSubmitted || hasChanged ? (
+          {!isSubmitted ? (
             isPasswordOpen ? (
               <FiEye className={css.icon} color="var(--color-white)" />
             ) : (

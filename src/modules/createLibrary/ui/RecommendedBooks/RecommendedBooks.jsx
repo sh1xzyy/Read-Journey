@@ -13,11 +13,19 @@ const RecommendedBooks = ({ setCurPage }) => {
       <ul className={css.recommendedBooksList}>
         {recommendedBooks?.results?.map((book) => (
           <li key={book._id}>
-            <img
-              className={css.recommendedBooksItemImg}
-              src={book.imageUrl}
-              alt={book.author}
-            />
+            {book?.imageUrl ? (
+              <img
+                className={css.recommendedBooksItemImg}
+                src={book.imageUrl}
+                alt={book?.title}
+              />
+            ) : (
+              <div className={css.recommendedBooksStubIconWrapper}>
+                <svg className={css.recommendedBooksStubIcon}>
+                  <use href="/icons/icons.svg#icon-open-book"></use>
+                </svg>
+              </div>
+            )}
             <h3 className={css.recommendedBooksItemName} title={book.title}>
               {book.title}
             </h3>

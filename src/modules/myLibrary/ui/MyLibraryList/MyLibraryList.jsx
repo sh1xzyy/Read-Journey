@@ -6,11 +6,10 @@ import css from "./MyLibraryList.module.css";
 const MyLibraryList = ({ ownBooks }) => {
   const dispatch = useDispatch();
 
-  const deleteOwnBook = async () => {
+  const deleteOwnBook = async (id) => {
     try {
-      await dispatch(
-        removeBookByIdThunk({ id: "68e8d2eacffdfb3a34e2dced" })
-      ).unwrap();
+      await dispatch(removeBookByIdThunk(id)).unwrap();
+      toast.success("Successfully deleted a book");
     } catch (error) {
       toast.error(error);
     }
@@ -19,11 +18,20 @@ const MyLibraryList = ({ ownBooks }) => {
     <ul className={css.myLibraryList}>
       {ownBooks?.map((book) => (
         <li key={book?._id}>
-          <img
-            className={css.myLibraryItemImg}
-            src={book?.imageUrl}
-            alt={book?.title}
-          />
+          {book?.imageUrl ? (
+            <img
+              className={css.myLibraryItemImg}
+              src={book.imageUrl}
+              alt={book?.title}
+            />
+          ) : (
+            <div className={css.myLibraryStubIconWrapper}>
+              <svg className={css.myLibraryStubIcon}>
+                <use href="/icons/icons.svg#icon-open-book"></use>
+              </svg>
+            </div>
+          )}
+
           <div className={css.infoWrapper}>
             <div>
               <h3 className={css.myLibraryItemName}>{book?.title}</h3>
@@ -33,7 +41,7 @@ const MyLibraryList = ({ ownBooks }) => {
             <button
               className={css.deleteButton}
               type="button"
-              onClick={() => deleteOwnBook()}
+              onClick={() => deleteOwnBook(book?._id)}
             >
               <svg className={css.deleteIcon} width={14} height={14}>
                 <use href="/icons/icons.svg#icon-trash"></use>
