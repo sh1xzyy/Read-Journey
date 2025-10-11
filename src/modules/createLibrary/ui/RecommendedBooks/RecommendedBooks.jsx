@@ -38,8 +38,8 @@ const RecommendedBooks = ({ setCurPage }) => {
           type="button"
           onClick={() => setCurPage((prev) => ++prev)}
         >
-          <svg width={24} height={24}>
-            <use href="/icons/icons.svg#icon-arrow-right"></use>
+          <svg className={css.recommendedIcon} width={24} height={24}>
+            <use href="/icons/icons.svg#icon-arrow"></use>
           </svg>
         </button>
       </div>

@@ -1,15 +1,9 @@
-import { useSelector } from "react-redux";
-import { selectRecommendedBooks } from "../../../../entities/book/model/selectors";
 import css from "./RecommendedBooksList.module.css";
 
-const RecommendedBooksList = () => {
-  const recommendedBooks = useSelector(selectRecommendedBooks);
-
-  console.log(recommendedBooks);
-
+const RecommendedBooksList = ({ list }) => {
   return (
     <ul className={css.recommendedBooksList}>
-      {recommendedBooks?.results.map((book) => (
+      {list.map((book) => (
         <li key={book._id}>
           <img
             className={css.recommendedBooksItemImg}

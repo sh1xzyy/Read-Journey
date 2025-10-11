@@ -1,10 +1,12 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import DashBoard from "../../shared/ui/DashBoard/DashBoard";
 import css from "./RecommendedBooks.module.css";
 import { useEffect, useState } from "react";
 import { getRecommendedBooksThunk } from "../../entities/book/model/operations";
 import useWindowWidth from "../../shared/hooks/useWindowWidth";
 import RecommendedBooksList from "./ui/RecommendedBooksList/RecommendedBooksList";
+import { selectRecommendedBooks } from "../../entities/book/model/selectors";
+import ActionButtons from "./ui/ActionButtons/ActionButtons";
 
 const RecommendedBooks = () => {
   const dispatch = useDispatch();
@@ -12,6 +14,7 @@ const RecommendedBooks = () => {
   const { windowWidth } = useWindowWidth();
   const limitByWindowWidth =
     windowWidth < 768 ? 2 : windowWidth < 1280 ? 8 : 10;
+  const recommendedBooks = useSelector(selectRecommendedBooks);
 
   useEffect(() => {
     (async () => {
@@ -26,29 +29,13 @@ const RecommendedBooks = () => {
       <div className={css.recommendedHeader}>
         <h2 className={css.recommendedTitle}>Recommended</h2>
 
-        <div className={css.buttonsWrapper}>
-          <button
-            className={css.leftButton}
-            type="button"
-            onClick={() => setCurPage((prev) => prev - 1)}
-          >
-            <svg width={16} height={16}>
-              <use href="/icons/icons.svg#icon-arrow-left"></use>
-            </svg>
-          </button>
-          <button
-            className={css.rightButton}
-            type="button"
-            onClick={() => setCurPage((prev) => prev + 1)}
-          >
-            <svg width={16} height={16}>
-              <use href="/icons/icons.svg#icon-arrow-right"></use>
-            </svg>
-          </button>
-        </div>
+        <ActionButtons
+          recommendedBooks={recommendedBooks}
+          setCurPage={setCurPage}
+        />
       </div>
 
-      <RecommendedBooksList />
+      <RecommendedBooksList list={recommendedBooks?.results} />
     </DashBoard>
   );
 };

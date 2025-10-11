@@ -78,6 +78,11 @@
   background-color: transparent;
 }
 
+.promoIcon {
+  fill: transparent;
+  color: var(--color-white);
+}
+
 @media screen and (min-width: 768px) {
   .promoTitle {
     font-size: 20px;

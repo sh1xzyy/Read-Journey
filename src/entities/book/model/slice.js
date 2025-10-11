@@ -1,5 +1,5 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
-import { getRecommendedBooksThunk } from "./operations";
+import { getOwnBooksThunk, getRecommendedBooksThunk } from "./operations";
 
 const initialState = {
   isLoading: false,
@@ -18,6 +18,27 @@ const initialState = {
     page: null,
     perPage: null,
   },
+  ownBooks: [
+    {
+      _id: "",
+      title: "",
+      author: "",
+      imageUrl: "",
+      totalPages: null,
+      status: "",
+      owner: "",
+      progress: [
+        {
+          startPage: null,
+          startReading: "",
+          finishPage: null,
+          finishReading: "",
+          speed: null,
+          status: "",
+        },
+      ],
+    },
+  ],
 };
 
 const bookSlice = createSlice({
@@ -29,15 +50,27 @@ const bookSlice = createSlice({
         state.isLoading = false;
         state.recommendedBooks = action.payload;
       })
+      .addCase(getOwnBooksThunk.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.ownBooks = action.payload;
+      })
       .addMatcher(
-        isAnyOf(getRecommendedBooksThunk.pending, (state) => {
-          state.isLoading = true;
-        })
+        isAnyOf(
+          getRecommendedBooksThunk.pending,
+          getOwnBooksThunk.pending,
+          (state) => {
+            state.isLoading = true;
+          }
+        )
       )
       .addMatcher(
-        isAnyOf(getRecommendedBooksThunk.rejected, (state) => {
-          state.isLoading = false;
-        })
+        isAnyOf(
+          getRecommendedBooksThunk.rejected,
+          getOwnBooksThunk.rejected,
+          (state) => {
+            state.isLoading = false;
+          }
+        )
       );
   },
 });

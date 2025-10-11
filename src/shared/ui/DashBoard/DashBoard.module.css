@@ -13,17 +13,29 @@
   padding: 40px 20px;
 }
 
+.libraryWrapper {
+  min-height: 407px;
+}
+
 @media screen and (min-width: 768px) {
   .filtersWrapper {
     padding: 32px;
   }
-  .recommendedWrapper {
+  .recommendedWrapper,
+  .libraryWrapper {
     padding: 40px;
+  }
+
+  .libraryWrapper {
+    min-height: 518px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .filtersWrapper {
     padding: 40px 20px 20px 20px;
+  }
+  .libraryWrapper {
+    min-height: 518px;
   }
 }

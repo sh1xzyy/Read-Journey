@@ -85,13 +85,14 @@ export const removeBookByIdThunk = createAsyncThunk(
 
 export const getOwnBooksThunk = createAsyncThunk(
   "books/own",
-  async (_, thunkAPI) => {
+  async (params, thunkAPI) => {
     try {
       const token = thunkAPI.getState().auth.user.token;
       if (!token) {
         return thunkAPI.rejectWithValue("No token");
       }
       const response = await axiosInstance.get("/books/own", {
+        params,
         headers: {
           Authorization: `Bearer ${token}`,
         },
