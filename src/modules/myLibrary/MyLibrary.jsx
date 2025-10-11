@@ -25,7 +25,11 @@ const MyLibrary = () => {
   return (
     <DashBoard type="library">
       <MyLibraryHeader ownBooks={ownBooks} />
-      {ownBooks ? <MyLibraryList ownBooks={ownBooks} /> : <MyLibraryStub />}
+      {ownBooks?.length > 0 ? (
+        <MyLibraryList ownBooks={ownBooks} />
+      ) : (
+        <MyLibraryStub />
+      )}
     </DashBoard>
   );
 };
