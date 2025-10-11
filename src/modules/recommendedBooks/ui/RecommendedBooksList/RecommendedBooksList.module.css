@@ -12,7 +12,7 @@
 }
 
 .recommendedBooksItemName {
-  max-width: 71px;
+  max-width: 137px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

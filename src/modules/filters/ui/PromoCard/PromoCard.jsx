@@ -41,7 +41,7 @@ const PromoCard = () => {
           type="button"
           onClick={() => console.log("doing smth")}
         >
-          <svg width={24} height={24}>
+          <svg className={css.promoIcon} width={24} height={24}>
             <use href="/icons/icons.svg#icon-arrow"></use>
           </svg>
         </button>

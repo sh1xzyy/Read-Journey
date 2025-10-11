@@ -61,6 +61,11 @@
   background-color: transparent;
 }
 
+.recommendedIcon {
+  fill: transparent;
+  color: var(--color-white);
+}
+
 @media screen and (min-width: 768px) {
   .recommendedBooksTitle {
     font-size: 20px;
