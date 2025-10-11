@@ -7,16 +7,20 @@
 }
 
 @media screen and (min-width: 768px) {
-  .firstSection {
-    padding: 16px 0 8px 0;
-  }
+  .firstSection,
   .section {
     padding: 8px 0;
   }
 }
 
-@media screen and (min-width: 768px) {
-  .firstSection {
-    padding: 16px 0 27px 0;
+@media screen and (min-width: 1280px) {
+  .firstSection,
+  .section {
+    padding: 16px 0 0 0;
+  }
+  .libraryPageWrapper {
+    display: grid;
+    grid-template-columns: 353px 1fr;
+    gap: 16px;
   }
 }

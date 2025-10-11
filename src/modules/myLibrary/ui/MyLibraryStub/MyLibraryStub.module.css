@@ -1,0 +1,51 @@
+.myLibraryStubWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 63px 0 60px 0;
+}
+
+.myLibraryStubContentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.myLibraryStubImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: var(--color-grey);
+  margin-bottom: 10px;
+}
+
+.myLibraryStubText {
+  max-width: 197px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: var(--color-white);
+  span {
+    color: var(--color-light-grey);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .myLibraryStubImg {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 20px;
+  }
+  .myLibraryStubText {
+    max-width: 274px;
+  }
+  .myLibraryStubWrapper {
+    padding: 86px 0 120px 0;
+  }
+}

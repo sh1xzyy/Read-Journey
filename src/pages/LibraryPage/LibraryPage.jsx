@@ -1,14 +1,19 @@
 import CreateLibrary from "../../modules/createLibrary/CreateLibrary";
+import MyLibrary from "../../modules/myLibrary/MyLibrary";
 import css from "./LibraryPage.module.css";
 
 const LibraryPage = () => {
   return (
-    <div>
-      <section className={css.firstSection}>
-        <div className="container">
+    <div className="container">
+      <div className={css.libraryPageWrapper}>
+        <section className={css.firstSection}>
           <CreateLibrary />
-        </div>
-      </section>
+        </section>
+
+        <section className={css.section}>
+          <MyLibrary />
+        </section>
+      </div>
     </div>
   );
 };
