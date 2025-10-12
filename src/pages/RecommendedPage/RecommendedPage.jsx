@@ -11,7 +11,10 @@ const RecommendedPage = () => {
   return (
     <>
       {isDescriptionModalOpen && (
-        <ModalBookDescription setIsModalOpen={setIsDescriptionModalOpen} />
+        <ModalBookDescription
+          type="bookDescription"
+          setIsModalOpen={setIsDescriptionModalOpen}
+        />
       )}
       <div className="container">
         <div className={css.recommendedPageWrapper}>

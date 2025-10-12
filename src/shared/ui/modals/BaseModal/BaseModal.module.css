@@ -18,20 +18,35 @@
   align-items: center;
   flex-direction: column;
   position: relative;
-  max-width: 335px;
   width: 100%;
   height: auto;
-  padding: 40px;
   border: 1px solid rgba(104, 104, 104, 0.2);
   border-radius: 12px;
   background-color: var(--color-dark-grey);
 }
 
+.bookDescriptionModal {
+  padding: 40px;
+  max-width: 335px;
+}
+
+.createdCategoryModal {
+  padding: 50px 46px;
+  max-width: 335px;
+}
+
 .modalCloseBtn {
   position: absolute;
   top: 16px;
-  right: 16px;
   background-color: transparent;
+}
+
+.bookDescriptionBtn {
+  right: 16px;
+}
+
+.createdCategoryBtn {
+  right: 12px;
 }
 
 .closeIcon {
@@ -40,8 +55,12 @@
 }
 
 @media screen and (min-width: 768px) {
-  .modal {
-    max-width: 500px;
+  .bookDescriptionModal {
     padding: 50px;
+    max-width: 500px;
+  }
+  .createdCategoryBtn {
+    max-width: 342px;
+    right: 16px;
   }
 }

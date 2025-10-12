@@ -1,8 +1,11 @@
 import ModalBookDescriptionProvider from "./ModalBookDescriptionContext/ModalBookDescriptionProvider";
+import ModalCreatedCategoryProvider from "./ModalCreatedCategoryContext/ModalCreatedCategoryProvider";
 
 const AppProvider = ({ children }) => {
   return (
-    <ModalBookDescriptionProvider>{children}</ModalBookDescriptionProvider>
+    <ModalCreatedCategoryProvider>
+      <ModalBookDescriptionProvider>{children}</ModalBookDescriptionProvider>
+    </ModalCreatedCategoryProvider>
   );
 };
 

@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import css from "./ModalBookDescription.module.css";
 import { selectSelectedBook } from "../../../../entities/book/model/selectors";
 
-const ModalBookDescription = ({ setIsModalOpen }) => {
+const ModalBookDescription = ({ setIsModalOpen, type }) => {
   const dispatch = useDispatch();
   const book = useSelector(selectSelectedBook);
 
@@ -19,7 +19,7 @@ const ModalBookDescription = ({ setIsModalOpen }) => {
   };
 
   return (
-    <BaseModal setIsModalOpen={setIsModalOpen}>
+    <BaseModal setIsModalOpen={setIsModalOpen} type={type}>
       {book.imageUrl ? (
         <img
           className={css.modalBookDescriptionItemImg}

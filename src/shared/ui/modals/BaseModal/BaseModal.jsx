@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import css from "./BaseModal.module.css";
 import clsx from "clsx";
 
-const BaseModal = ({ setIsModalOpen, children }) => {
+const BaseModal = ({ setIsModalOpen, children, type }) => {
   const onOverlayClick = (e) => {
     if (e.target === e.currentTarget) {
       setIsModalOpen(false);
@@ -22,9 +22,19 @@ const BaseModal = ({ setIsModalOpen, children }) => {
 
   return (
     <div className={css.modalOverlay} onClick={onOverlayClick}>
-      <div className={clsx(css.modal, css.modalAdditionalStyles)}>
+      <div
+        className={clsx(
+          css.modal,
+          type === "bookDescription" && css.bookDescriptionModal,
+          type === "createdCategory" && css.createdCategoryModal
+        )}
+      >
         <button
-          className={clsx(css.modalCloseBtn, css.btnAdditionalStyles)}
+          className={clsx(
+            css.modalCloseBtn,
+            type === "bookDescription" && css.bookDescriptionBtn,
+            type === "createdCategory" && css.createdCategoryBtn
+          )}
           type="button"
           onClick={() => setIsModalOpen(false)}
         >
