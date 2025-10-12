@@ -1,0 +1,38 @@
+.modalCreatedCategoryImg {
+  margin-bottom: 20px;
+}
+
+.modalCreatedCategoryTitle {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: var(--color-white);
+  margin-bottom: 10px;
+}
+
+.modalCreatedCategoryText {
+  max-width: 242px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: var(--color-light-grey);
+  span {
+    color: var(--color-white);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modalCreatedCategoryImg {
+    margin-bottom: 32px;
+  }
+  .modalCreatedCategoryTitle {
+    margin-bottom: 14px;
+  }
+  .modalCreatedCategoryTitle {
+    font-size: 20px;
+  }
+}

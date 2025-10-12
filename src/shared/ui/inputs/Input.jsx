@@ -10,7 +10,10 @@ const Input = forwardRef(({ type = "text", label, error, ...rest }, ref) => {
         className={clsx(
           css.input,
           label === "Name:" && css.name,
-          label === "Mail:" && css.mail
+          label === "Mail:" && css.mail,
+          label === "Book title:" && css.bookTitle,
+          label === "The author:" && css.author,
+          label === "Number of pages:" && css.numOfPages
         )}
         type={type}
         {...rest}

@@ -30,6 +30,18 @@
   padding-left: 49px;
 }
 
+.input.bookTitle {
+  padding-left: 77px;
+}
+
+.input.author {
+  padding-left: 85px;
+}
+
+.input.numOfPages {
+  padding-left: 119px;
+}
+
 .inputWrapper {
   position: relative;
 }
@@ -48,7 +60,6 @@
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: -0.02em;
-  text-align: center;
   color: var(--color-light-grey);
   position: absolute;
   top: 50%;
@@ -88,6 +99,17 @@
   }
   .input.mail {
     padding-left: 53px;
+  }
+  .input.bookTitle {
+    padding-left: 86px;
+  }
+
+  .input.author {
+    padding-left: 95px;
+  }
+
+  .input.numOfPages {
+    padding-left: 135px;
   }
   .passwordInput {
     padding-left: 86px;

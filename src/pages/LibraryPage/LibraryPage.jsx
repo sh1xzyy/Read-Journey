@@ -1,20 +1,35 @@
+import { useModalCreatedCategoryContext } from "../../context/ModalCreatedCategoryContext/useModalCreatedCategoryContext";
 import CreateLibrary from "../../modules/createLibrary/CreateLibrary";
 import MyLibrary from "../../modules/myLibrary/MyLibrary";
+import ModalCreatedCategory from "../../shared/ui/modals/ModalCreatedCategory/ModalCreatedCategory";
 import css from "./LibraryPage.module.css";
 
 const LibraryPage = () => {
-  return (
-    <div className="container">
-      <div className={css.libraryPageWrapper}>
-        <section className={css.firstSection}>
-          <CreateLibrary />
-        </section>
+  const { isCreatedCategoryModalOpen, setIsCreatedCategoryModalOpen } =
+    useModalCreatedCategoryContext();
 
-        <section className={css.section}>
-          <MyLibrary />
-        </section>
+  return (
+    <>
+      {isCreatedCategoryModalOpen && (
+        <ModalCreatedCategory
+          type="createdCategory"
+          setIsModalOpen={setIsCreatedCategoryModalOpen}
+        />
+      )}
+      <div className="container">
+        <div className={css.libraryPageWrapper}>
+          <section className={css.firstSection}>
+            <CreateLibrary
+              setIsCreatedCategoryModalOpen={setIsCreatedCategoryModalOpen}
+            />
+          </section>
+
+          <section className={css.section}>
+            <MyLibrary />
+          </section>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
