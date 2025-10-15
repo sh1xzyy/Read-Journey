@@ -8,7 +8,7 @@ import Details from "./ui/Details/Details";
 const ReadingBoard = ({ isProgress, isReading, setIsReading }) => {
   const [openIndex, setOpenIndex] = useState(0);
   return (
-    <DashBoard type={isProgress ? "progress" : "reading"}>
+    <DashBoard type={!isProgress ? "progress" : "reading"}>
       <div className={css.readingBoardWrapper}>
         <AddBook isReading={isReading} setIsReading={setIsReading} />
         {isProgress ? (

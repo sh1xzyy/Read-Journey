@@ -7,11 +7,14 @@ import toast from "react-hot-toast";
 import { getBookByIdThunk } from "../../entities/book/model/operations";
 import { useParams } from "react-router-dom";
 import { selectBook } from "../../entities/book/model/selectors";
+import ModalFinishedReading from "../../shared/ui/modals/ModalFinishedReading/ModalFinishedReading";
 
 const ReadingPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const book = useSelector(selectBook);
+  const [isFinishedModalOpen, setIsFinishedModalOpen] = useState(false);
+  const [isReading, setIsReading] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -23,32 +26,40 @@ const ReadingPage = () => {
     })();
   }, [dispatch, id]);
 
-  const isProgress = book?.progress?.length > 0;
+  useEffect(() => {
+    if (book?.status === "done") {
+      setIsFinishedModalOpen(true);
+    }
+  }, [book?.status]);
 
+  const isProgress = book?.progress?.length > 0;
   const isReadingCondition =
     book?.progress[book?.progress?.length - 1]?.status === "active";
-
-  const [isReading, setIsReading] = useState(false);
 
   useEffect(() => {
     setIsReading(isReadingCondition);
   }, [isReadingCondition]);
 
   return (
-    <div className="container">
-      <div className={css.readingPageWrapper}>
-        <section className={css.firstSection}>
-          <ReadingBoard
-            isProgress={isProgress}
-            isReading={isReading}
-            setIsReading={setIsReading}
-          />
-        </section>
-        <section className={css.section}>
-          <MyReading isReading={isReading} book={book} />
-        </section>
+    <>
+      {book?.status === "done" && isFinishedModalOpen && (
+        <ModalFinishedReading setIsModalOpen={setIsFinishedModalOpen} />
+      )}
+      <div className="container">
+        <div className={css.readingPageWrapper}>
+          <section className={css.firstSection}>
+            <ReadingBoard
+              isProgress={isProgress}
+              isReading={isReading}
+              setIsReading={setIsReading}
+            />
+          </section>
+          <section className={css.section}>
+            <MyReading isReading={isReading} book={book} />
+          </section>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

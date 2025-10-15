@@ -27,7 +27,8 @@ const BaseModal = ({ setIsModalOpen, children, type }) => {
           css.modal,
           type === "bookDescription" && css.recommendedBookDescriptionModal,
           type === "createdCategory" && css.createdCategoryModal,
-          type === "reading" && css.readingBookDescriptionModal
+          type === "reading" && css.readingBookDescriptionModal,
+          type === "finishReading" && css.finishReadingBookDescriptionModal
         )}
       >
         <button
@@ -35,7 +36,8 @@ const BaseModal = ({ setIsModalOpen, children, type }) => {
             css.modalCloseBtn,
             type === "bookDescription" && css.recommendedBookDescriptionBtn,
             type === "createdCategory" && css.createdCategoryBtn,
-            type === "reading" && css.readingBookDescriptionBtn
+            type === "reading" && css.readingBookDescriptionBtn,
+            type === "finishReading" && css.finishReadingBookDescriptionBtn
           )}
           type="button"
           onClick={() => setIsModalOpen(false)}
