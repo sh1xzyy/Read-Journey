@@ -7,10 +7,14 @@ import MyLibraryList from "./ui/MyLibraryList/MyLibraryList";
 import DashBoard from "../../shared/ui/DashBoard/DashBoard";
 import MyLibraryStub from "./ui/MyLibraryStub/MyLibraryStub";
 import { selectOwnBooks } from "../../entities/book/model/selectors";
+import ModalBookDescription from "../../shared/ui/modals/ModalBookDescription/ModalBookDescription";
+import { useModalOwnBookDescriptionContext } from "../../context/ModalOwnBookDescriptionContext/useModalOwnBookDescriptionContext";
 
 const MyLibrary = () => {
   const dispatch = useDispatch();
   const ownBooks = useSelector(selectOwnBooks);
+  const { isDescriptionModalOpen, setIsDescriptionModalOpen } =
+    useModalOwnBookDescriptionContext();
 
   useEffect(() => {
     (async () => {
@@ -23,14 +27,22 @@ const MyLibrary = () => {
   }, [dispatch]);
 
   return (
-    <DashBoard type="library">
-      <MyLibraryHeader ownBooks={ownBooks} />
-      {ownBooks?.length > 0 ? (
-        <MyLibraryList ownBooks={ownBooks} />
-      ) : (
-        <MyLibraryStub />
+    <>
+      {isDescriptionModalOpen && (
+        <ModalBookDescription
+          setIsModalOpen={setIsDescriptionModalOpen}
+          type="reading"
+        />
       )}
-    </DashBoard>
+      <DashBoard type="library">
+        <MyLibraryHeader ownBooks={ownBooks} />
+        {ownBooks?.length > 0 ? (
+          <MyLibraryList ownBooks={ownBooks} />
+        ) : (
+          <MyLibraryStub />
+        )}
+      </DashBoard>
+    </>
   );
 };
 

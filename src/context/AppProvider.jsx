@@ -1,11 +1,16 @@
-import ModalBookDescriptionProvider from "./ModalBookDescriptionContext/ModalBookDescriptionProvider";
 import ModalCreatedCategoryProvider from "./ModalCreatedCategoryContext/ModalCreatedCategoryProvider";
+import ModalOwnBookDescriptionProvider from "./ModalOwnBookDescriptionContext/ModalOwnBookDescriptionProvider";
+import ModalRecommendedBookDescriptionProvider from "./ModalRecommendedBookDescriptionContext/ModalRecommendedBookDescriptionProvider";
 
 const AppProvider = ({ children }) => {
   return (
-    <ModalCreatedCategoryProvider>
-      <ModalBookDescriptionProvider>{children}</ModalBookDescriptionProvider>
-    </ModalCreatedCategoryProvider>
+    <ModalOwnBookDescriptionProvider>
+      <ModalCreatedCategoryProvider>
+        <ModalRecommendedBookDescriptionProvider>
+          {children}
+        </ModalRecommendedBookDescriptionProvider>
+      </ModalCreatedCategoryProvider>
+    </ModalOwnBookDescriptionProvider>
   );
 };
 

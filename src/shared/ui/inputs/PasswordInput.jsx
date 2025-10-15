@@ -21,7 +21,7 @@ const PasswordInput = forwardRef(
             }}
             {...props}
           />
-          <span className={css.label}>Password:</span>
+          <span className={css.hint}>Password:</span>
         </div>
 
         <button

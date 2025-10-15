@@ -32,19 +32,8 @@ const RegisterForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={css.wrapper}>
-        <div>
-          <Input {...register("name")} label="Name:" />
-          {errors.name && (
-            <span className={css.errorMsg}>{errors.name.message}</span>
-          )}
-        </div>
-
-        <div>
-          <Input {...register("email")} label="Mail:" />
-          {errors.email && (
-            <span className={css.errorMsg}>{errors.email.message}</span>
-          )}
-        </div>
+        <Input {...register("name")} label="Name:" error={errors.name} />
+        <Input {...register("email")} label="Mail:" error={errors.email} />
 
         <div>
           <PasswordInput

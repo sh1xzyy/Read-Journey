@@ -28,16 +28,16 @@ const FiltersForm = () => {
 
   return (
     <form className={css.filtersForm} onSubmit={handleSubmit(onSubmit)}>
-      <h2 className={css.filtersLabel}>Filters:</h2>
       <div className={css.wrapper}>
         <Input
           {...register("title")}
-          label="Book title:"
+          hint="Book title:"
+          label="Filters:"
           error={errors.title}
         />
         <Input
           {...register("author")}
-          label="The author:"
+          hint="The author:"
           error={errors.author}
         />
       </div>

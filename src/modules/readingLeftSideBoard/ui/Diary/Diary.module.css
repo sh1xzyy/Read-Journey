@@ -1,0 +1,28 @@
+.list {
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  padding-right: 23px;
+  margin-right: -28px;
+}
+
+.list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.list::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: var(--color-grey);
+  border-radius: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .list {
+    gap: 14px;
+  }
+}

@@ -42,7 +42,11 @@
   padding-left: 119px;
 }
 
-.inputWrapper {
+.pageOfNum {
+  padding-left: 99px;
+}
+
+.inputContainer {
   position: relative;
 }
 
@@ -56,6 +60,16 @@
 }
 
 .label {
+  display: block;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  margin: 0 0 8px 14px;
+}
+
+.hint {
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
@@ -103,20 +117,25 @@
   .input.bookTitle {
     padding-left: 86px;
   }
-
   .input.author {
     padding-left: 95px;
   }
-
   .input.numOfPages {
     padding-left: 135px;
+  }
+  .pageOfNum {
+    padding-left: 111px;
   }
   .passwordInput {
     padding-left: 86px;
   }
-  .label {
+  .hint {
     font-size: 14px;
     line-height: 1.29;
+  }
+  .label {
+    font-size: 14px;
+    line-height: 1.28571;
   }
   .icon {
     width: 20px;

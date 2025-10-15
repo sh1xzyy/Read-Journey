@@ -2,11 +2,11 @@ import Filters from "../../modules/filters/Filters";
 import RecommendedBooks from "../../modules/recommendedBooks/RecommendedBooks";
 import css from "./RecommendedPage.module.css";
 import ModalBookDescription from "../../shared/ui/modals/ModalBookDescription/ModalBookDescription";
-import { useModalBookDescriptionContext } from "../../context/ModalBookDescriptionContext/useModalBookDescriptionContext";
+import { useModalRecommendedBookDescriptionContext } from "../../context/ModalRecommendedBookDescriptionContext/useModalBookDescriptionContext";
 
 const RecommendedPage = () => {
   const { isDescriptionModalOpen, setIsDescriptionModalOpen } =
-    useModalBookDescriptionContext();
+    useModalRecommendedBookDescriptionContext();
 
   return (
     <>

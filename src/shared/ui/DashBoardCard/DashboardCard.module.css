@@ -5,14 +5,32 @@
   background-color: var(--color-grey);
 }
 
+.diaryWrapper {
+  height: 100%;
+  padding: 16px;
+  max-height: 211px;
+}
+
+.statisticWrapper {
+  padding: 20px;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1279px) {
   .wrapper {
     padding: 26px 20px;
+  }
+  .diaryWrapper {
+    padding: 16px;
+    max-height: 252px;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .booksQuoteWrapper {
     padding: 15px 20px;
+  }
+  .diaryWrapper {
+    padding: 20px;
+    max-height: 373px;
   }
 }
