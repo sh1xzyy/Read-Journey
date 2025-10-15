@@ -70,7 +70,7 @@ function App() {
             }
           />
           <Route
-            path="/reading"
+            path="/reading/:id"
             element={
               <PrivateRoutes redirectTo="/login">
                 <ReadingPage />

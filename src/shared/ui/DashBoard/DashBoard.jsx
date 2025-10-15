@@ -7,7 +7,10 @@ const DashBoard = ({ children, type }) => {
         css.wrapper,
         type === "filters" && css.filtersWrapper,
         type === "recommended" && css.recommendedWrapper,
-        type === "library" && css.libraryWrapper
+        type === "library" && css.libraryWrapper,
+        type === "reading" && css.readingWrapper,
+        type === "progress" && css.progressWrapper,
+        type === "myReading" && css.myReadingWrapper
       )}
     >
       {children}

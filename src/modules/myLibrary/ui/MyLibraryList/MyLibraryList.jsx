@@ -2,9 +2,13 @@ import { useDispatch } from "react-redux";
 import { removeBookByIdThunk } from "../../../../entities/book/model/operations";
 import toast from "react-hot-toast";
 import css from "./MyLibraryList.module.css";
+import { getOwnBooksDescription } from "../../../../entities/book/model/slice";
+import { useModalOwnBookDescriptionContext } from "../../../../context/ModalOwnBookDescriptionContext/useModalOwnBookDescriptionContext";
+import ImageStub from "../../../../shared/ui/ImageStub/ImageStub";
 
 const MyLibraryList = ({ ownBooks }) => {
   const dispatch = useDispatch();
+  const { setIsDescriptionModalOpen } = useModalOwnBookDescriptionContext();
 
   const deleteOwnBook = async (id) => {
     try {
@@ -14,23 +18,27 @@ const MyLibraryList = ({ ownBooks }) => {
       toast.error(error);
     }
   };
+
+  const onThumbClick = (id) => {
+    dispatch(getOwnBooksDescription(id));
+    setIsDescriptionModalOpen(true);
+  };
+
   return (
     <ul className={css.myLibraryList}>
       {ownBooks?.map((book) => (
         <li key={book?._id}>
-          {book?.imageUrl ? (
-            <img
-              className={css.myLibraryItemImg}
-              src={book.imageUrl}
-              alt={book?.title}
-            />
-          ) : (
-            <div className={css.myLibraryStubIconWrapper}>
-              <svg className={css.myLibraryStubIcon}>
-                <use href="/icons/icons.svg#icon-open-book"></use>
-              </svg>
-            </div>
-          )}
+          <div onClick={() => onThumbClick(book?._id)}>
+            {book?.imageUrl ? (
+              <img
+                className={css.myLibraryItemImg}
+                src={book.imageUrl}
+                alt={book?.title}
+              />
+            ) : (
+              <ImageStub />
+            )}
+          </div>
 
           <div className={css.infoWrapper}>
             <div>

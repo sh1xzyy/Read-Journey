@@ -1,0 +1,138 @@
+.myReadingHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.myReadingTime {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33333;
+  letter-spacing: -0.02em;
+  color: var(--color-light-grey);
+}
+
+.myReadingTitle {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  margin-bottom: 40px;
+}
+
+.myReadingInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.myReadingImg {
+  max-width: 137px;
+  height: 208px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.myReadingTextWrapper {
+  max-width: 146px;
+}
+
+.myReadingName {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  margin-bottom: 5px;
+}
+
+.myReadingAuthor {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-light-grey);
+  margin-bottom: 20px;
+}
+
+.readingIndicator {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-white);
+  border-radius: 50%;
+  background-color: transparent;
+  margin: 0 auto;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-red);
+    transition: all 250ms linear;
+  }
+  &.active::before {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .myReadingTime {
+    font-size: 14px;
+    line-height: 1.28571;
+  }
+  .myReadingTitle {
+    font-size: 28px;
+    line-height: 1.14286;
+    margin-bottom: 32px;
+  }
+  .myReadingImg {
+    max-width: 169px;
+    height: 256px;
+    margin-bottom: 25px;
+  }
+  .myReadingTextWrapper {
+    max-width: 317px;
+  }
+  .myReadingName {
+    font-size: 20px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .myReadingAuthor {
+    font-size: 14px;
+    line-height: 1.28571;
+    margin-bottom: 16px;
+  }
+  .readingIndicator {
+    width: 50px;
+    height: 50px;
+    &::before {
+      width: 40px;
+      height: 40px;
+    }
+    &.active::before {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .myReadingTitle {
+    margin-bottom: 44px;
+  }
+  .myReadingImg {
+    max-width: 224px;
+    height: 340px;
+  }
+}

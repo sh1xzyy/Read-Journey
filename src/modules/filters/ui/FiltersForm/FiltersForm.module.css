@@ -9,15 +9,6 @@
   margin-bottom: 20px;
 }
 
-.filtersLabel {
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  color: var(--color-white);
-  margin: 0 0 8px 14px;
-}
-
 .submitBtn {
   height: 38px;
   min-width: 91px;
@@ -35,11 +26,6 @@
 @media screen and (min-width: 768px) {
   .filtersForm {
     margin-bottom: 0;
-  }
-
-  .filtersLabel {
-    font-size: 14px;
-    line-height: 1.28571;
   }
 
   .submitBtn {

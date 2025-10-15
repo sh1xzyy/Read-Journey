@@ -1,0 +1,56 @@
+.addBookForm {
+  margin-bottom: 40px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  margin-bottom: 20px;
+}
+
+.addBookLabel {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  margin: 0 0 8px 14px;
+}
+
+.submitBtn {
+  height: 38px;
+  min-width: 91px;
+  padding: 10px 20px;
+  border: 1px solid rgba(249, 249, 249, 0.2);
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: 0.02em;
+  color: var(--color-white);
+  background-color: transparent;
+}
+
+@media screen and (min-width: 768px) {
+  .addBookForm {
+    margin-bottom: 0;
+  }
+
+  .addBookLabel {
+    font-size: 14px;
+    line-height: 1.28571;
+  }
+
+  .submitBtn {
+    min-width: 114px;
+    height: 42px;
+    padding: 12px 28px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .addBookForm {
+    margin-bottom: 40px;
+  }
+}

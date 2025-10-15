@@ -1,29 +1,34 @@
 import { useDispatch } from "react-redux";
 import css from "./RecommendedBooksList.module.css";
-import { getBooksDescription } from "../../../../entities/book/model/slice";
-import { useModalBookDescriptionContext } from "../../../../context/ModalBookDescriptionContext/useModalBookDescriptionContext";
+import { getRecommendedBooksDescription } from "../../../../entities/book/model/slice";
+import { useModalRecommendedBookDescriptionContext } from "../../../../context/ModalRecommendedBookDescriptionContext/useModalBookDescriptionContext";
+import ImageStub from "../../../../shared/ui/ImageStub/ImageStub";
 
 const RecommendedBooksList = ({ list }) => {
   const dispatch = useDispatch();
-  const { setIsDescriptionModalOpen } = useModalBookDescriptionContext();
+  const { setIsDescriptionModalOpen } =
+    useModalRecommendedBookDescriptionContext();
 
-  const onClick = (id) => {
-    dispatch(getBooksDescription(id));
+  const onThumbClick = (id) => {
+    dispatch(getRecommendedBooksDescription(id));
     setIsDescriptionModalOpen(true);
   };
+
   return (
     <ul className={css.recommendedBooksList}>
       {list.map((book) => (
-        <li
-          className={css.recommendedBooksItem}
-          key={book._id}
-          onClick={() => onClick(book._id)}
-        >
-          <img
-            className={css.recommendedBooksItemImg}
-            src={book.imageUrl}
-            alt={book.author}
-          />
+        <li className={css.recommendedBooksItem} key={book._id}>
+          {book?.imageUrl ? (
+            <img
+              className={css.recommendedBooksItemImg}
+              src={book.imageUrl}
+              alt={book.author}
+              onClick={() => onThumbClick(book._id)}
+            />
+          ) : (
+            <ImageStub />
+          )}
+
           <h3 className={css.recommendedBooksItemName} title={book.title}>
             {book.title}
           </h3>

@@ -33,12 +33,8 @@ const LoginForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={css.wrapper}>
-        <div>
-          <Input {...register("email")} label="Mail:" />
-          {errors.email && (
-            <span className={css.errorMsg}>{errors.email.message}</span>
-          )}
-        </div>
+        <Input {...register("email")} hint="Mail:" error={errors.email} />
+
         <div>
           <PasswordInput
             {...register("password")}

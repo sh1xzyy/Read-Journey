@@ -3,11 +3,18 @@ import BaseModal from "../BaseModal/BaseModal";
 import { addBookFromRecommendsByIdThunk } from "../../../../entities/book/model/operations";
 import toast from "react-hot-toast";
 import css from "./ModalBookDescription.module.css";
-import { selectSelectedBook } from "../../../../entities/book/model/selectors";
+import {
+  selectSelectedOwnBook,
+  selectSelectedRecommendedBook,
+} from "../../../../entities/book/model/selectors";
+import { Link } from "react-router-dom";
+import ImageStub from "../../ImageStub/ImageStub";
 
 const ModalBookDescription = ({ setIsModalOpen, type }) => {
   const dispatch = useDispatch();
-  const book = useSelector(selectSelectedBook);
+  const book = useSelector(
+    type === "reading" ? selectSelectedOwnBook : selectSelectedRecommendedBook
+  );
 
   const onClick = async (id) => {
     try {
@@ -20,39 +27,41 @@ const ModalBookDescription = ({ setIsModalOpen, type }) => {
 
   return (
     <BaseModal setIsModalOpen={setIsModalOpen} type={type}>
-      {book.imageUrl ? (
+      {book?.imageUrl ? (
         <img
           className={css.modalBookDescriptionItemImg}
           src={book.imageUrl}
           alt={book.author}
         />
       ) : (
-        <div className={css.modalBookDescriptionIconWrapper}>
-          <svg className={css.modalBookDescriptionIcon}>
-            <use href="/public/icons/icons.svg#icon-open-book"></use>
-          </svg>
-        </div>
+        <ImageStub />
       )}
 
       <div className={css.modalBookDescriptionTextWrapper}>
-        <h3 className={css.modalBookDescriptionItemName} title={book.title}>
-          {book.title}
+        <h3 className={css.modalBookDescriptionItemName} title={book?.title}>
+          {book?.title}
         </h3>
-        <h4 className={css.modalBookDescriptionItemAuthor} title={book.author}>
-          {book.author}
+        <h4 className={css.modalBookDescriptionItemAuthor} title={book?.author}>
+          {book?.author}
         </h4>
         <span className={css.modalBookDescriptionTotalPage}>
-          {book.totalPages} pages
+          {book?.totalPages} pages
         </span>
       </div>
 
-      <button
-        className={css.addToLibraryBtn}
-        type="button"
-        onClick={() => onClick(book._id)}
-      >
-        Add to library
-      </button>
+      {type === "reading" ? (
+        <Link className={css.linkToReadingPage} to={`/reading/${book?._id}`}>
+          Start Reading
+        </Link>
+      ) : (
+        <button
+          className={css.addToLibraryBtn}
+          type="button"
+          onClick={() => onClick(book._id)}
+        >
+          Add to library
+        </button>
+      )}
     </BaseModal>
   );
 };

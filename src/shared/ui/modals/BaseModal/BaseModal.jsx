@@ -25,15 +25,17 @@ const BaseModal = ({ setIsModalOpen, children, type }) => {
       <div
         className={clsx(
           css.modal,
-          type === "bookDescription" && css.bookDescriptionModal,
-          type === "createdCategory" && css.createdCategoryModal
+          type === "bookDescription" && css.recommendedBookDescriptionModal,
+          type === "createdCategory" && css.createdCategoryModal,
+          type === "reading" && css.readingBookDescriptionModal
         )}
       >
         <button
           className={clsx(
             css.modalCloseBtn,
-            type === "bookDescription" && css.bookDescriptionBtn,
-            type === "createdCategory" && css.createdCategoryBtn
+            type === "bookDescription" && css.recommendedBookDescriptionBtn,
+            type === "createdCategory" && css.createdCategoryBtn,
+            type === "reading" && css.readingBookDescriptionBtn
           )}
           type="button"
           onClick={() => setIsModalOpen(false)}

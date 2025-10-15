@@ -5,7 +5,9 @@ const DashboardCard = ({ children, type }) => {
     <div
       className={clsx(
         css.wrapper,
-        type === "booksQuote" && css.booksQuoteWrapper
+        type === "booksQuote" && css.booksQuoteWrapper,
+        type === "diary" && css.diaryWrapper,
+        type === "statistic" && css.statisticWrapper
       )}
     >
       {children}

@@ -153,7 +153,7 @@ export const deleteReadingBookByIdThunk = createAsyncThunk(
         return thunkAPI.rejectWithValue("No token");
       }
       const response = await axiosInstance.delete("/books/reading", {
-        data: body,
+        params: body,
         headers: {
           Authorization: `Bearer ${token}`,
         },

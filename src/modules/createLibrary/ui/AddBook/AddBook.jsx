@@ -32,22 +32,25 @@ const AddBook = () => {
 
   return (
     <form className={css.addBookForm} onSubmit={handleSubmit(onSubmit)}>
-      <h2 className={css.addBookLabel}>Create your library:</h2>
       <div className={css.wrapper}>
         <Input
           {...register("title")}
-          label="Book title:"
+          hint="Book title:"
+          label="Create your library:"
+          id="title"
           error={errors?.title}
         />
         <Input
           {...register("author")}
-          label="The author:"
+          hint="The author:"
+          id="author"
           error={errors?.author}
         />
         <Input
           type="number"
           {...register("totalPages")}
-          label="Number of pages:"
+          hint="Number of pages:"
+          id="totalPages"
           error={errors?.totalPages}
         />
       </div>

@@ -25,7 +25,8 @@
   background-color: var(--color-dark-grey);
 }
 
-.bookDescriptionModal {
+.recommendedBookDescriptionModal,
+.readingBookDescriptionModal {
   padding: 40px;
   max-width: 335px;
 }
@@ -41,7 +42,8 @@
   background-color: transparent;
 }
 
-.bookDescriptionBtn {
+.recommendedBookDescriptionBtn,
+.readingBookDescriptionBtn {
   right: 16px;
 }
 
@@ -55,7 +57,8 @@
 }
 
 @media screen and (min-width: 768px) {
-  .bookDescriptionModal {
+  .recommendedBookDescriptionModal,
+  .readingBookDescriptionModal {
     padding: 50px;
     max-width: 500px;
   }

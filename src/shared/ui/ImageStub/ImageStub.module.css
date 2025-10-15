@@ -1,0 +1,41 @@
+.stubIconWrapper,
+.stubIconLibraryWrapper,
+.stubIconModalWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 208px;
+  width: 137px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background-color: var(--color-grey);
+}
+
+.stubIconLibraryWrapper {
+  margin-bottom: 10px;
+}
+
+.stubIconModalWrapper {
+  margin-bottom: 16px;
+}
+
+.stubIcon {
+  width: 111px;
+  height: 72px;
+  fill: var(--color-light-grey);
+}
+
+@media screen and (min-width: 768px) {
+  .stubIconLibraryWrapper {
+    height: 256px;
+    width: 169px;
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .stubIconLibraryWrapper {
+    height: 340px;
+    width: 224px;
+  }
+}

@@ -3,6 +3,7 @@ import DashboardCard from "../../../../shared/ui/DashBoardCard/DashBoardCard";
 import css from "./RecommendedBooks.module.css";
 import { selectRecommendedBooks } from "../../../../entities/book/model/selectors";
 import { Link } from "react-router-dom";
+import ImageStub from "../../../../shared/ui/ImageStub/ImageStub";
 
 const RecommendedBooks = ({ setCurPage }) => {
   const recommendedBooks = useSelector(selectRecommendedBooks);
@@ -20,11 +21,7 @@ const RecommendedBooks = ({ setCurPage }) => {
                 alt={book?.title}
               />
             ) : (
-              <div className={css.recommendedBooksStubIconWrapper}>
-                <svg className={css.recommendedBooksStubIcon}>
-                  <use href="/icons/icons.svg#icon-open-book"></use>
-                </svg>
-              </div>
+              <ImageStub />
             )}
             <h3 className={css.recommendedBooksItemName} title={book.title}>
               {book.title}
