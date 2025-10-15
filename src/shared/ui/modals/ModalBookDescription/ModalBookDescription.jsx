@@ -9,6 +9,7 @@ import {
 } from "../../../../entities/book/model/selectors";
 import { Link } from "react-router-dom";
 import ImageStub from "../../ImageStub/ImageStub";
+import Button from "../../button/Button";
 
 const ModalBookDescription = ({ setIsModalOpen, type }) => {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const ModalBookDescription = ({ setIsModalOpen, type }) => {
     type === "reading" ? selectSelectedOwnBook : selectSelectedRecommendedBook
   );
 
-  const onClick = async (id) => {
+  const handleClick = async (id) => {
     try {
       await dispatch(addBookFromRecommendsByIdThunk(id)).unwrap();
       toast.success("Successfully added book into library");
@@ -50,17 +51,15 @@ const ModalBookDescription = ({ setIsModalOpen, type }) => {
       </div>
 
       {type === "reading" ? (
-        <Link className={css.linkToReadingPage} to={`/reading/${book?._id}`}>
+        <Link
+          className={css.linkToReadingPage}
+          to={`/reading/${book?._id}`}
+          onClick={() => setIsModalOpen(false)}
+        >
           Start Reading
         </Link>
       ) : (
-        <button
-          className={css.addToLibraryBtn}
-          type="button"
-          onClick={() => onClick(book._id)}
-        >
-          Add to library
-        </button>
+        <Button label="Add to library" onClick={() => handleClick(book._id)} />
       )}
     </BaseModal>
   );

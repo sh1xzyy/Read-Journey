@@ -10,6 +10,7 @@ import {
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import toast from "react-hot-toast";
+import Button from "../../../../shared/ui/button/Button";
 
 const AddBook = ({ isReading, setIsReading }) => {
   const {
@@ -46,9 +47,7 @@ const AddBook = ({ isReading, setIsReading }) => {
         />
       </div>
 
-      <button className={css.submitBtn} type="submit">
-        {isReading ? "To stop" : "To start"}
-      </button>
+      <Button label={isReading ? "To stop" : "To start"} type="submit" />
     </form>
   );
 };

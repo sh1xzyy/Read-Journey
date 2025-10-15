@@ -1,6 +1,5 @@
-.logoutButton {
+.button {
   height: 38px;
-  min-width: 91px;
   padding: 10px 20px;
   border: 1px solid rgba(249, 249, 249, 0.2);
   border-radius: 30px;
@@ -13,7 +12,9 @@
 }
 
 @media screen and (min-width: 768px) {
-  .logoutButton {
+  .button {
+    font-size: 16px;
+    line-height: 1.125;
     min-width: 114px;
     height: 42px;
     padding: 12px 28px;

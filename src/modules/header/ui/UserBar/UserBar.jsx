@@ -1,11 +1,11 @@
 import css from "./UserBar.module.css";
 
-import LogoutButton from "../LogoutButton/LogoutButton";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../../../entities/user/model/selectors";
 import { getFirstLetter } from "../../../../shared/utils/getFirstLetter";
+import Button from "../../../../shared/ui/button/Button";
 
-const UserBar = ({ windowWidth, setIsBurgerMenuOpen }) => {
+const UserBar = ({ windowWidth, setIsBurgerMenuOpen, handleLogout }) => {
   const { name } = useSelector(selectUser);
   return (
     <div className={css.userBarWrapper}>
@@ -24,7 +24,7 @@ const UserBar = ({ windowWidth, setIsBurgerMenuOpen }) => {
           </svg>
         </button>
       ) : (
-        <LogoutButton />
+        <Button label="Log out" onClick={handleLogout} />
       )}
     </div>
   );

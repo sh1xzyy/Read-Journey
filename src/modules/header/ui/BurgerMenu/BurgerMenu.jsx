@@ -1,10 +1,14 @@
 import clsx from "clsx";
-import LogoutButton from "../LogoutButton/LogoutButton";
 import css from "./BurgerMenu.module.css";
 import { IoClose } from "react-icons/io5";
 import UserNav from "../UserNav/UserNav";
+import Button from "../../../../shared/ui/button/Button";
 
-const BurgerMenu = ({ isBurgerMenuOpen, setIsBurgerMenuOpen }) => {
+const BurgerMenu = ({
+  isBurgerMenuOpen,
+  setIsBurgerMenuOpen,
+  handleLogout,
+}) => {
   return (
     <div
       className={clsx(css.burgerMenuWrapper, {
@@ -21,8 +25,7 @@ const BurgerMenu = ({ isBurgerMenuOpen, setIsBurgerMenuOpen }) => {
       </button>
 
       <UserNav type="burger" />
-
-      <LogoutButton />
+      <Button label="Log out" onClick={handleLogout} />
     </div>
   );
 };

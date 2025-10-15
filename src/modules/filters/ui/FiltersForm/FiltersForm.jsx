@@ -7,6 +7,7 @@ import Input from "../../../../shared/ui/inputs/Input";
 import { getRecommendedBooksThunk } from "../../../../entities/book/model/operations";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { filtersSchema } from "./schema/filtersFormSchema";
+import Button from "../../../../shared/ui/button/Button";
 
 const FiltersForm = () => {
   const dispatch = useDispatch();
@@ -41,9 +42,7 @@ const FiltersForm = () => {
           error={errors.author}
         />
       </div>
-      <button className={css.submitBtn} type="submit">
-        To apply
-      </button>
+      <Button label="To apply" type="submit" />
     </form>
   );
 };
