@@ -3,7 +3,7 @@ import css from "./UserBar.module.css";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../../../entities/user/model/selectors";
 import { getFirstLetter } from "../../../../shared/utils/getFirstLetter";
-import Button from "../../../../shared/ui/button/Button";
+import Button from "../../../../shared/ui/Button/Button";
 
 const UserBar = ({ windowWidth, setIsBurgerMenuOpen, handleLogout }) => {
   const { name } = useSelector(selectUser);

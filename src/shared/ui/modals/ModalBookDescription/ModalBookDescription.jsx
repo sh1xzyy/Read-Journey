@@ -9,7 +9,7 @@ import {
 } from "../../../../entities/book/model/selectors";
 import { Link } from "react-router-dom";
 import ImageStub from "../../ImageStub/ImageStub";
-import Button from "../../button/Button";
+import Button from "../../Button/Button";
 
 const ModalBookDescription = ({ setIsModalOpen, type }) => {
   const dispatch = useDispatch();

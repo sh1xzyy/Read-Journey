@@ -10,7 +10,7 @@ import {
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import toast from "react-hot-toast";
-import Button from "../../../../shared/ui/button/Button";
+import Button from "../../../../shared/ui/Button/Button";
 
 const AddBook = ({ isReading, setIsReading }) => {
   const {

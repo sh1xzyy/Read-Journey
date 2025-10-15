@@ -2,7 +2,7 @@ import clsx from "clsx";
 import css from "./BurgerMenu.module.css";
 import { IoClose } from "react-icons/io5";
 import UserNav from "../UserNav/UserNav";
-import Button from "../../../../shared/ui/button/Button";
+import Button from "../../../../shared/ui/Button/Button";
 
 const BurgerMenu = ({
   isBurgerMenuOpen,

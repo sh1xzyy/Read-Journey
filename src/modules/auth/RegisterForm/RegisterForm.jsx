@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import css from "../styles/formStyles.module.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { registerSchema } from "../schemas/registerSchema";
@@ -8,6 +8,8 @@ import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
 import Input from "../../../shared/ui/inputs/Input";
 import PasswordInput from "../../../shared/ui/inputs/PasswordInput";
+import CustomLink from "../../../shared/ui/CustomLink/CustomLink";
+import SubmitButton from "../ui/SubmitButton/SubmitButton";
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -32,8 +34,8 @@ const RegisterForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={css.wrapper}>
-        <Input {...register("name")} label="Name:" error={errors.name} />
-        <Input {...register("email")} label="Mail:" error={errors.email} />
+        <Input {...register("name")} hint="Name:" error={errors.name} />
+        <Input {...register("email")} hint="Mail:" error={errors.email} />
 
         <div>
           <PasswordInput
@@ -49,13 +51,9 @@ const RegisterForm = () => {
       </div>
 
       <div className={css.buttonsWrapper}>
-        <button className={css.submitBtn} type="submit">
-          Registration
-        </button>
+        <SubmitButton label="Registration" />
 
-        <Link className={css.registerLink} to="/login">
-          Already have an account?
-        </Link>
+        <CustomLink to="/login" label="Already have an account?" type="1" />
       </div>
     </form>
   );

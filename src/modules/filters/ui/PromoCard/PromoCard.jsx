@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import css from "./PromoCard.module.css";
 import DashboardCard from "../../../../shared/ui/DashBoardCard/DashBoardCard";
+import CustomLink from "../../../../shared/ui/CustomLink/CustomLink";
 
 const promoData = [
   {
@@ -32,9 +32,7 @@ const PromoCard = () => {
       </ul>
 
       <div className={css.buttonsWrapper}>
-        <Link className={css.toLibraryLink} to="/library">
-          My library
-        </Link>
+        <CustomLink to="/library" label="My library" type="2" />
 
         <button
           className={css.rightButton}

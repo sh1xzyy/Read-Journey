@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import css from "../styles/formStyles.module.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "../schemas/loginSchema";
@@ -8,6 +8,8 @@ import { loginUserThunk } from "../../../entities/user/model/operations";
 import toast from "react-hot-toast";
 import Input from "../../../shared/ui/inputs/Input";
 import PasswordInput from "../../../shared/ui/inputs/PasswordInput";
+import CustomLink from "../../../shared/ui/CustomLink/CustomLink";
+import SubmitButton from "../ui/SubmitButton/SubmitButton";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -49,13 +51,9 @@ const LoginForm = () => {
       </div>
 
       <div className={css.buttonsWrapper}>
-        <button className={css.submitBtn} type="submit">
-          Log in
-        </button>
+        <SubmitButton label="Log in" />
 
-        <Link className={css.registerLink} to="/register">
-          Don’t have an account?
-        </Link>
+        <CustomLink to="/register" label="Don’t have an account?" type="1" />
       </div>
     </form>
   );

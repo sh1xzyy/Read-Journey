@@ -1,0 +1,28 @@
+.link {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-decoration: underline;
+  color: var(--color-light-grey);
+  transition: color 250ms linear;
+
+  &:hover {
+    color: var(--color-white);
+  }
+
+  .firstLink {
+    font-size: 12px;
+    line-height: 1.16667;
+  }
+
+  .secondLink {
+    font-size: 14px;
+    line-height: 1.28571;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .firstLink {
+    font-size: 14px;
+    line-height: 1.28571;
+  }
+}

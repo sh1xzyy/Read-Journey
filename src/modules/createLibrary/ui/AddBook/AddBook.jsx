@@ -8,7 +8,7 @@ import { addBookThunk } from "../../../../entities/book/model/operations";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { addBookSchema } from "./schema/addBookSchema";
 import { useModalCreatedCategoryContext } from "../../../../context/ModalCreatedCategoryContext/useModalCreatedCategoryContext";
-import Button from "../../../../shared/ui/button/Button";
+import Button from "../../../../shared/ui/Button/Button";
 
 const AddBook = () => {
   const dispatch = useDispatch();

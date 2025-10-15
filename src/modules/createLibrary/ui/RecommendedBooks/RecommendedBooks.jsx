@@ -2,8 +2,8 @@ import { useSelector } from "react-redux";
 import DashboardCard from "../../../../shared/ui/DashBoardCard/DashBoardCard";
 import css from "./RecommendedBooks.module.css";
 import { selectRecommendedBooks } from "../../../../entities/book/model/selectors";
-import { Link } from "react-router-dom";
 import ImageStub from "../../../../shared/ui/ImageStub/ImageStub";
+import CustomLink from "../../../../shared/ui/CustomLink/CustomLink";
 
 const RecommendedBooks = ({ setCurPage }) => {
   const recommendedBooks = useSelector(selectRecommendedBooks);
@@ -34,9 +34,7 @@ const RecommendedBooks = ({ setCurPage }) => {
       </ul>
 
       <div className={css.buttonsWrapper}>
-        <Link className={css.toLibraryLink} to="/recommended">
-          Home
-        </Link>
+        <CustomLink to="/recommended" label="Home" type="1" />
 
         <button
           className={css.rightButton}

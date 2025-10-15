@@ -7,7 +7,7 @@ import Input from "../../../../shared/ui/inputs/Input";
 import { getRecommendedBooksThunk } from "../../../../entities/book/model/operations";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { filtersSchema } from "./schema/filtersFormSchema";
-import Button from "../../../../shared/ui/button/Button";
+import Button from "../../../../shared/ui/Button/Button";
 
 const FiltersForm = () => {
   const dispatch = useDispatch();
