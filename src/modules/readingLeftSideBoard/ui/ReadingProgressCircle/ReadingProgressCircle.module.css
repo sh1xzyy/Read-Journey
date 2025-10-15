@@ -23,7 +23,7 @@
   font-size: 18px;
   line-height: 1.11111;
   letter-spacing: -0.02em;
-  color: #f9f9f9;
+  color: var(--color-white);
 }
 
 .info {
@@ -44,7 +44,7 @@
   font-size: 14px;
   line-height: 1.28571;
   letter-spacing: -0.02em;
-  color: #f9f9f9;
+  color: var(--color-white);
   margin-bottom: 4px;
 }
 
@@ -54,5 +54,34 @@
   line-height: 1.2;
   letter-spacing: -0.02em;
   text-align: center;
-  color: #686868;
+  color: var(--color-light-grey);
+}
+
+@media screen and (min-width: 768px) {
+  .chartWrapper {
+    width: 138px;
+    height: 138px;
+    margin-bottom: 16px;
+  }
+  .percentageText {
+    font-size: 20px;
+    line-height: 1;
+  }
+  .percentageValue {
+    font-size: 20px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .pagesText {
+    font-size: 12px;
+    line-height: 1.16667;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .chartWrapper {
+    width: 189px;
+    height: 189px;
+    margin-bottom: 10px;
+  }
 }

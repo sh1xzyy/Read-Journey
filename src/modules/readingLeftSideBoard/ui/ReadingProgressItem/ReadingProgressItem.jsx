@@ -119,7 +119,7 @@ const ReadingProgressItem = ({ bookId, progress, totalPages }) => {
               </div>
 
               <span className={css.speed}>
-                {progress?.speed} pages per hour
+                {progress?.speed || 0} pages per hour
               </span>
             </div>
             <button
