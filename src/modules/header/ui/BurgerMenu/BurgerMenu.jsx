@@ -20,6 +20,7 @@ const BurgerMenu = ({
         className={css.closeButton}
         type="button"
         onClick={() => setIsBurgerMenuOpen(false)}
+        aria-label="close burger menu button"
       >
         <IoClose color="var(--color-white)" size={28} />
       </button>

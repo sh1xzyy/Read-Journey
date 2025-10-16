@@ -4,8 +4,6 @@ import clsx from "clsx";
 import ImageStub from "../../shared/ui/ImageStub/ImageStub";
 
 const MyReading = ({ isReading, book }) => {
-  console.log(book);
-
   return (
     <DashBoard type="myReading">
       <div className={css.myReadingHeader}>

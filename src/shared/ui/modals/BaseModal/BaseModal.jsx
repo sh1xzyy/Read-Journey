@@ -41,6 +41,7 @@ const BaseModal = ({ setIsModalOpen, children, type }) => {
           )}
           type="button"
           onClick={() => setIsModalOpen(false)}
+          aria-label="close modal button"
         >
           <svg className={css.closeIcon} width={22} height={22}>
             <use href="/icons/icons.svg#icon-close"></use>

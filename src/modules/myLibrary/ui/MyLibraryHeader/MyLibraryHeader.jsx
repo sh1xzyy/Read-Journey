@@ -10,9 +10,6 @@ const MyLibraryHeader = ({ ownBooks }) => {
   const onChange = async (option) => {
     try {
       const value = option?.value;
-
-      console.log(value);
-
       if (value === "all") {
         await dispatch(getOwnBooksThunk({})).unwrap();
       } else {

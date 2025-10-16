@@ -18,6 +18,7 @@ const UserBar = ({ windowWidth, setIsBurgerMenuOpen, handleLogout }) => {
           className={css.burgerMenuBtn}
           type="button"
           onClick={() => setIsBurgerMenuOpen(true)}
+          aria-label="open burger menu button"
         >
           <svg width={28} height={28}>
             <use href="/icons/icons.svg#icon-burger"></use>

@@ -41,6 +41,7 @@ const RecommendedBooks = ({ setCurPage }) => {
           className={css.rightButton}
           type="button"
           onClick={() => setCurPage((prev) => ++prev)}
+          aria-label="next recommended books"
         >
           <svg className={css.recommendedIcon} width={24} height={24}>
             <use href="/icons/icons.svg#icon-arrow"></use>

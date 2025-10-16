@@ -126,6 +126,7 @@ const ReadingProgressItem = ({ bookId, progress, totalPages }) => {
               className={css.deleteBtn}
               type="button"
               onClick={() => handleDelete({ bookId, readingId: progress?._id })}
+              aria-label="delete dairy progress button"
             >
               <svg className={css.deleteIcon} width={14} height={14}>
                 <use href="/icons/icons.svg#icon-trash"></use>
