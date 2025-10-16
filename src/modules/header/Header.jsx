@@ -8,6 +8,7 @@ import UserBar from "./ui/UserBar/UserBar";
 import { useDispatch } from "react-redux";
 import { logoutUserThunk } from "../../entities/user/model/operations";
 import toast from "react-hot-toast";
+import { Navigate } from "react-router-dom";
 
 const Header = () => {
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);

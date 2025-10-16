@@ -24,6 +24,14 @@
 
 @media screen and (min-width: 768px) {
   .list {
+    max-height: 236px;
     gap: 14px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .list {
+    max-height: 325px;
+    gap: 22px;
   }
 }

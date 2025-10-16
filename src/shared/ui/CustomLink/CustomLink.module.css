@@ -9,12 +9,12 @@
     color: var(--color-white);
   }
 
-  .firstLink {
+  &.firstLink {
     font-size: 12px;
     line-height: 1.16667;
   }
 
-  .secondLink {
+  &.secondLink {
     font-size: 14px;
     line-height: 1.28571;
   }
