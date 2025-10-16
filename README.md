@@ -1,6 +1,6 @@
 # 📚 Read-Journey
 
-**BookTracker** is a web application for managing and tracking your book reading. Users can register, log in, explore recommended books, add books to their personal library, and monitor their reading progress.
+**Read-Journey** is a web application for managing and tracking your book reading. Users can register, log in, explore recommended books, add books to their personal library, and monitor their reading progress.
 
 ---
 
