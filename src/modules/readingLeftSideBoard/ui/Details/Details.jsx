@@ -24,6 +24,7 @@ const Details = () => {
             className={css.button}
             type="button"
             onClick={() => setOpenIndex(0)}
+            aria-label="dairy button"
           >
             <svg className={clsx(css.icon, openIndex === 0 && css.active)}>
               <use href="/icons/icons.svg#icon-hour-glass"></use>
@@ -33,6 +34,7 @@ const Details = () => {
             className={css.button}
             type="button"
             onClick={() => setOpenIndex(1)}
+            aria-label="statistics button"
           >
             <svg className={clsx(css.icon, openIndex === 1 && css.active)}>
               <use href="/icons/icons.svg#icon-pie-chart"></use>

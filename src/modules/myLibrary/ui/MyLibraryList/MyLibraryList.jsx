@@ -34,6 +34,7 @@ const MyLibraryList = ({ ownBooks }) => {
                 className={css.myLibraryItemImg}
                 src={book.imageUrl}
                 alt={book?.title}
+                loading="lazy"
               />
             ) : (
               <ImageStub />
@@ -50,6 +51,7 @@ const MyLibraryList = ({ ownBooks }) => {
               className={css.deleteButton}
               type="button"
               onClick={() => deleteOwnBook(book?._id)}
+              aria-label="delete book"
             >
               <svg className={css.deleteIcon} width={14} height={14}>
                 <use href="/icons/icons.svg#icon-trash"></use>

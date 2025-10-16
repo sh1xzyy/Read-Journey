@@ -33,6 +33,7 @@ const ModalBookDescription = ({ setIsModalOpen, type }) => {
           className={css.modalBookDescriptionItemImg}
           src={book.imageUrl}
           alt={book.author}
+          loading="lazy"
         />
       ) : (
         <ImageStub />

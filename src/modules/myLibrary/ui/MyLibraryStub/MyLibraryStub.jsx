@@ -13,6 +13,7 @@ const MyLibraryStub = () => {
               src="/common/book-mobile@1x.png"
               srcSet="/common/book-mobile@1x.png 1x, /common/book-mobile@2x.png 2x"
               alt="book"
+              loading="lazy"
             />
           </picture>
         </div>

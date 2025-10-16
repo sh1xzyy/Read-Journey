@@ -27,6 +27,7 @@ const PasswordInput = forwardRef(
             type="button"
             className={css.passwordButton}
             onClick={() => setIsPasswordOpen((prev) => !prev)}
+            aria-label="show or hide password"
           >
             {isPasswordOpen ? (
               <FiEye className={css.icon} color="var(--color-white)" />

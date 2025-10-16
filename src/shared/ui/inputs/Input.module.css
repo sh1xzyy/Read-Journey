@@ -121,10 +121,6 @@
     line-height: 1.29;
   }
 
-  .errorMsg {
-    position: absolute;
-  }
-
   .input {
     &.name {
       padding-left: 65px;

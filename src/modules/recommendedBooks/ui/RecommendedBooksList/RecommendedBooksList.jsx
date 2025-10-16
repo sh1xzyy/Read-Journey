@@ -24,6 +24,7 @@ const RecommendedBooksList = ({ list }) => {
               src={book.imageUrl}
               alt={book.author}
               onClick={() => onThumbClick(book._id)}
+              loading="lazy"
             />
           ) : (
             <ImageStub />

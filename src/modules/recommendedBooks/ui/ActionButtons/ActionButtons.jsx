@@ -13,6 +13,7 @@ const ActionButtons = ({ recommendedBooks, setCurPage }) => {
         type="button"
         disabled={!isPrevButtonActive}
         onClick={() => setCurPage((prev) => prev - 1)}
+        aria-label="previous recommended books  button"
       >
         <svg
           className={clsx(
@@ -30,6 +31,7 @@ const ActionButtons = ({ recommendedBooks, setCurPage }) => {
         type="button"
         disabled={!isNextButtonActive}
         onClick={() => setCurPage((prev) => prev + 1)}
+        aria-label="next recommended books button"
       >
         <svg
           className={clsx(

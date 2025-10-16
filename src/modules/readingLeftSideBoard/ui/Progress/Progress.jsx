@@ -17,6 +17,7 @@ const Progress = () => {
             src="/progress/star-mobile@1x.png"
             srcSet="/progress/star-mobile@1x.png 1x, /progress/star-mobile@2x.png 2x"
             alt="star"
+            loading="lazy"
           />
         </picture>
       </div>
