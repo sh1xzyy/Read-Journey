@@ -1,16 +1,70 @@
-# React + Vite
+# 📚 Read-Journey
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**BookTracker** is a web application for managing and tracking your book reading. Users can register, log in, explore recommended books, add books to their personal library, and monitor their reading progress.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+### **1. Registration & Login**
+- Forms `RegisterForm` and `LoginForm` with **react-hook-form + Yup** validation.
+- Field rules:
+  - **Name:** string
+  - **Email:** valid email format `/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/`
+  - **Password:** minimum 7 characters
+- Errors are displayed to users, backend errors appear as **popup notifications**.
+- Automatic login after successful registration and redirect to `/recommended`.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+### **2. Header & Navigation**
+- Company **logo** and navigation menu `UserNav`:
+  - `/recommended` → Recommended page
+  - `/library` → My Library page
+- Active page highlighted.
+- Mobile/tablet friendly with **burger menu**.
+- **Log out** button clears user session and Redux store, redirects to `Welcome page`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+### **3. Recommended Books (`/recommended`)**
+- **Dashboard** component wraps:
+  - Filters form
+  - App description with link to My Library
+  - Static quote block
+- **RecommendedBooks** component:
+  - Server-side pagination with "prev" / "next" arrows
+  - Book cards with cover, title, and author
+  - Click on book cover opens **modal** with detailed info and **Add to library** button
+
+---
+
+### **4. My Library (`/library`)**
+- **Dashboard** with `AddBook` form (3 inputs + "Add book" button)
+- User's book list with **filter by reading status**
+- Book cards:
+  - Cover, title, author
+  - Delete button to remove book from library
+  - Modal window with **Start reading** button
+
+---
+
+### **5. Reading Page (`/reading`)**
+- **Dashboard** with `AddReading` form:
+  - Button shows **"To start"** or **"To stop"** depending on reading phase
+  - Updates reading progress on backend
+  - Displays notifications for backend errors
+- **MyBook** shows reading progress
+- **Details** block:
+  - **Diary**: logs reading events by date (pages read, time, progress %)
+  - **Statistics**: chart visualizing reading progress
+- Modal appears when book is finished
+
+---
+
+## 🛠 Technologies Used
+
+- React, React Router, Redux, axios, react-hook-form
+
+---
+
