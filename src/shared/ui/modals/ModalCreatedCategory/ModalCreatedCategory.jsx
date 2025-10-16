@@ -14,6 +14,7 @@ const ModalCreatedCategory = ({ setIsModalOpen, type }) => {
           src="/myLibrary/like-mobile@1x.png"
           srcSet="/myLibrary/like-mobile@1x.png 1x, /myLibrary/like-mobile@2x.png 2x"
           alt="like"
+          loading="lazy"
         />
       </picture>
 

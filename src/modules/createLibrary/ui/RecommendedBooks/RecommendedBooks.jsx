@@ -19,6 +19,7 @@ const RecommendedBooks = ({ setCurPage }) => {
                 className={css.recommendedBooksItemImg}
                 src={book.imageUrl}
                 alt={book?.title}
+                loading="lazy"
               />
             ) : (
               <ImageStub />

@@ -9,6 +9,7 @@ const QuoteCard = () => {
           src="/filters/books@1x.png 1x"
           srcSet="/filters/books@1x.png 1x, /filters/books@2x.png 2x"
           alt="books"
+          loading="lazy"
         />
         <p className={css.bookQuoteDescription}>
           "Books are <span>windows</span> to the world, and reading is a journey

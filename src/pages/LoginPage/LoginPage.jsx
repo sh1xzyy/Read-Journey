@@ -35,6 +35,7 @@ const LoginPage = () => {
                         src="/auth/iphone-mobile@1x.png"
                         srcSet="/auth/iphone-mobile@2x.png 2x"
                         alt="iPhone"
+                        loading="lazy"
                       />
                     </picture>
                   </div>

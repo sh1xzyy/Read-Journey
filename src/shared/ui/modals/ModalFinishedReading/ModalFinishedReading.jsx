@@ -15,6 +15,7 @@ const ModalFinishedReading = ({ setIsModalOpen }) => {
           srcSet="/common/book-mobile@1x.png 1x,
             /common/book-mobile@2x.png 2x"
           alt="book"
+          loading="lazy"
         />
       </picture>
       <h2 className={css.title}>The book is read</h2>

@@ -34,6 +34,7 @@ const MyLibraryList = ({ ownBooks }) => {
                 className={css.myLibraryItemImg}
                 src={book.imageUrl}
                 alt={book?.title}
+                loading="lazy"
               />
             ) : (
               <ImageStub />

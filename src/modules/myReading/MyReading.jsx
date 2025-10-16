@@ -23,6 +23,7 @@ const MyReading = ({ isReading, book }) => {
             className={css.myReadingImg}
             src={book?.imageUrl}
             alt={book?.title}
+            loading="lazy"
           />
         ) : (
           <ImageStub type="library" />
