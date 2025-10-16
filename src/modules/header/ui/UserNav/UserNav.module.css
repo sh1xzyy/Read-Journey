@@ -22,7 +22,11 @@
   line-height: 1.125;
   letter-spacing: -0.02em;
   color: var(--color-light-grey);
+  transition: color 250ms linear;
   &.active {
+    color: var(--color-white);
+  }
+  &:hover {
     color: var(--color-white);
   }
 }

@@ -20,6 +20,7 @@
 }
 
 .myLibraryItemImg {
+  cursor: pointer;
   object-fit: cover;
   height: 208px;
   width: 137px;

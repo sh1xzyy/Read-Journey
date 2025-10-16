@@ -16,37 +16,41 @@ const PasswordInput = forwardRef(
             type={isPasswordOpen ? "text" : "password"}
             className={css.passwordInput}
             value={value ?? ""}
-            onChange={(e) => {
-              if (typeof onChange === "function") onChange(e);
-            }}
+            onChange={(e) => onChange(e)}
             {...props}
           />
           <span className={css.hint}>Password:</span>
         </div>
 
-        <button
-          type="button"
-          className={css.passwordButton}
-          onClick={() => setIsPasswordOpen((prev) => !prev)}
-        >
-          {!isSubmitted ? (
-            isPasswordOpen ? (
+        {!isSubmitted && (
+          <button
+            type="button"
+            className={css.passwordButton}
+            onClick={() => setIsPasswordOpen((prev) => !prev)}
+          >
+            {isPasswordOpen ? (
               <FiEye className={css.icon} color="var(--color-white)" />
             ) : (
               <FiEyeOff className={css.icon} color="var(--color-white)" />
-            )
-          ) : error ? (
-            <PiWarningCircleBold
-              className={css.icon}
-              color="var(--color-red)"
-            />
-          ) : (
-            <IoCheckmarkCircleOutline
-              className={css.icon}
-              color="var(--color-green)"
-            />
-          )}
-        </button>
+            )}
+          </button>
+        )}
+
+        {isSubmitted && (
+          <div className={css.validationIcons}>
+            {error ? (
+              <PiWarningCircleBold
+                className={css.icon}
+                color="var(--color-red)"
+              />
+            ) : (
+              <IoCheckmarkCircleOutline
+                className={css.icon}
+                color="var(--color-green)"
+              />
+            )}
+          </div>
+        )}
       </div>
     );
   }

@@ -1,0 +1,28 @@
+.submitBtn {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: 0.02em;
+  color: var(--color-dark-grey);
+  border: 1px solid;
+  border-radius: 30px;
+  padding: 12px 29px;
+  height: 42px;
+  background-color: var(--color-white);
+  transition: all 250ms linear;
+
+  &:hover {
+    color: var(--color-white);
+    border-color: rgba(249, 249, 249, 0.2);
+    background-color: var(--color-dark-grey);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .submitBtn {
+    height: 52px;
+    font-size: 20px;
+    line-height: 1;
+    padding: 16px 54px;
+  }
+}

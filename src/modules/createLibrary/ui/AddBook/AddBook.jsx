@@ -8,6 +8,7 @@ import { addBookThunk } from "../../../../entities/book/model/operations";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { addBookSchema } from "./schema/addBookSchema";
 import { useModalCreatedCategoryContext } from "../../../../context/ModalCreatedCategoryContext/useModalCreatedCategoryContext";
+import Button from "../../../../shared/ui/Button/Button";
 
 const AddBook = () => {
   const dispatch = useDispatch();
@@ -54,9 +55,8 @@ const AddBook = () => {
           error={errors?.totalPages}
         />
       </div>
-      <button className={css.submitBtn} type="submit">
-        Add Book
-      </button>
+
+      <Button label="Add Book" type="submit" />
     </form>
   );
 };

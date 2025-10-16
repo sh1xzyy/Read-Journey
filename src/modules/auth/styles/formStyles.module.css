@@ -1,62 +1,31 @@
 .wrapper {
-	display: flex;
-	flex-direction: column;
-	row-gap: 8px;
-	margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  margin-bottom: 20px;
 }
 
 .buttonsWrapper {
-	display: flex;
-	align-items: center;
-	column-gap: 14px;
+  display: flex;
+  align-items: center;
+  column-gap: 14px;
 }
 
 .errorMsg {
-	margin-left: 14px;
-	font-weight: 500;
-	font-size: 12px;
-	line-height: 1.17;
-	letter-spacing: -0.02em;
-	color: var(--color-red);
-}
-
-.submitBtn {
-	font-weight: 700;
-	font-size: 14px;
-	line-height: 1.29;
-	letter-spacing: 0.02em;
-	color: var(--color-dark-grey);
-	border-radius: 30px;
-	padding: 12px 29px;
-	height: 42px;
-	background: var(--color-white);
-}
-
-.registerLink {
-	font-weight: 500;
-	font-size: 12px;
-	line-height: 1.17;
-	letter-spacing: -0.02em;
-	text-decoration: underline;
-	color: var(--color-light-grey);
+  margin-left: 14px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: -0.02em;
+  color: var(--color-red);
 }
 
 @media screen and (min-width: 768px) {
-	.wrapper {
-		row-gap: 14px;
-		margin-bottom: 82px;
-	}
-	.buttonsWrapper {
-		column-gap: 20px;
-	}
-	.submitBtn {
-		height: 52px;
-		font-size: 20px;
-		line-height: 1;
-		padding: 16px 54px;
-	}
-	.registerLink {
-		font-size: 14px;
-		line-height: 1.29;
-	}
+  .wrapper {
+    row-gap: 14px;
+    margin-bottom: 82px;
+  }
+  .buttonsWrapper {
+    column-gap: 20px;
+  }
 }

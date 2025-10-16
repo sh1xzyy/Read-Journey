@@ -9,41 +9,37 @@
   border-radius: 12px;
   padding: 0 14px;
   width: 100%;
-  border: 1px solid rgba(249, 249, 249, 0.1);
+  border: 1px solid transparent;
   background-color: var(--color-grey);
   transition: border-color 250ms linear;
+
+  &:hover {
+    border-color: rgba(249, 249, 249, 0.1);
+  }
 }
 
-.passwordInput.valid {
-  border-color: var(--color-green);
-}
+.input {
+  &.name {
+    padding-left: 59px;
+  }
+  &.mail {
+    padding-left: 49px;
+  }
+  &.bookTitle {
+    padding-left: 77px;
+  }
 
-.passwordInput.invalid {
-  border-color: var(--color-red);
-}
+  &.author {
+    padding-left: 85px;
+  }
 
-.input.name {
-  padding-left: 59px;
-}
+  &.numOfPages {
+    padding-left: 119px;
+  }
 
-.input.mail {
-  padding-left: 49px;
-}
-
-.input.bookTitle {
-  padding-left: 77px;
-}
-
-.input.author {
-  padding-left: 85px;
-}
-
-.input.numOfPages {
-  padding-left: 119px;
-}
-
-.pageOfNum {
-  padding-left: 99px;
+  &.pageOfNum {
+    padding-left: 99px;
+  }
 }
 
 .inputContainer {
@@ -52,10 +48,17 @@
 
 .passwordInput {
   padding-left: 78px;
+  &.valid {
+    border-color: var(--color-green);
+  }
+  &.invalid {
+    border-color: var(--color-red);
+  }
 }
 
 .passwordWrapper,
-.passwordInputWrapper {
+.passwordInputWrapper,
+.inputWrapper {
   position: relative;
 }
 
@@ -94,13 +97,22 @@
   height: 18px;
 }
 
+.validationIcons {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+}
+
 .errorMsg {
+  margin-left: 14px;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.16667;
   letter-spacing: -0.02em;
   color: var(--color-red);
 }
+
 @media screen and (min-width: 768px) {
   .input,
   .passwordInput {
@@ -108,23 +120,30 @@
     font-size: 14px;
     line-height: 1.29;
   }
-  .input.name {
-    padding-left: 65px;
+
+  .errorMsg {
+    position: absolute;
   }
-  .input.mail {
-    padding-left: 53px;
-  }
-  .input.bookTitle {
-    padding-left: 86px;
-  }
-  .input.author {
-    padding-left: 95px;
-  }
-  .input.numOfPages {
-    padding-left: 135px;
-  }
-  .pageOfNum {
-    padding-left: 111px;
+
+  .input {
+    &.name {
+      padding-left: 65px;
+    }
+    &.mail {
+      padding-left: 53px;
+    }
+    &.bookTitle {
+      padding-left: 86px;
+    }
+    &.author {
+      padding-left: 95px;
+    }
+    &.numOfPages {
+      padding-left: 135px;
+    }
+    .pageOfNum {
+      padding-left: 111px;
+    }
   }
   .passwordInput {
     padding-left: 86px;
@@ -137,6 +156,10 @@
     font-size: 14px;
     line-height: 1.28571;
   }
+  .validationIcons {
+    right: 18px;
+  }
+
   .icon {
     width: 20px;
     height: 20px;

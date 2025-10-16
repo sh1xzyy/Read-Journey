@@ -3,6 +3,10 @@
   gap: 21px;
 }
 
+.recommendedBooksItem {
+  cursor: pointer;
+}
+
 .recommendedBooksItemImg {
   cursor: pointer;
   object-fit: cover;
