@@ -4,6 +4,7 @@ import { addBookFromRecommendsByIdThunk } from "../../../../entities/book/model/
 import toast from "react-hot-toast";
 import css from "./ModalBookDescription.module.css";
 import {
+  selectOwnBooks,
   selectSelectedOwnBook,
   selectSelectedRecommendedBook,
 } from "../../../../entities/book/model/selectors";
@@ -16,9 +17,13 @@ const ModalBookDescription = ({ setIsModalOpen, type }) => {
   const book = useSelector(
     type === "reading" ? selectSelectedOwnBook : selectSelectedRecommendedBook
   );
+  const ownBook = useSelector(selectOwnBooks);
 
   const handleClick = async (id) => {
     try {
+      if (ownBook.some((b) => b.title === book.title)) {
+        return toast.error("That book is already exist");
+      }
       await dispatch(addBookFromRecommendsByIdThunk(id)).unwrap();
       toast.success("Successfully added book into library");
     } catch (error) {

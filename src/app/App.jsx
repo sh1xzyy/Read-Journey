@@ -1,8 +1,7 @@
 import { lazy, Suspense, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 const RegisterPage = lazy(() => import("../pages/RegisterPage/RegisterPage"));
 const LoginPage = lazy(() => import("../pages/LoginPage/LoginPage"));
-const WelcomePage = lazy(() => import("../pages/WelcomePage/WelcomePage"));
 const RecommendedPage = lazy(() =>
   import("../pages/RecommendedPage/RecommendedPage")
 );
@@ -49,7 +48,7 @@ function App() {
             path="/"
             element={
               <PrivateRoutes redirectTo="/login">
-                <WelcomePage />
+                <Navigate to="/recommended" />
               </PrivateRoutes>
             }
           />
