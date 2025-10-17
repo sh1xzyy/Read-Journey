@@ -14,6 +14,7 @@ const FiltersForm = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(filtersSchema),
@@ -22,6 +23,7 @@ const FiltersForm = () => {
   const onSubmit = async (values) => {
     try {
       await dispatch(getRecommendedBooksThunk(values)).unwrap();
+      reset();
     } catch (error) {
       toast.error(error);
     }

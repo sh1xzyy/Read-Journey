@@ -28,7 +28,10 @@ const MyLibraryList = ({ ownBooks }) => {
     <ul className={css.myLibraryList}>
       {ownBooks?.map((book) => (
         <li key={book?._id}>
-          <div onClick={() => onThumbClick(book?._id)}>
+          <div
+            className={css.myLibraryImgWrapper}
+            onClick={() => onThumbClick(book?._id)}
+          >
             {book?.imageUrl ? (
               <img
                 className={css.myLibraryItemImg}

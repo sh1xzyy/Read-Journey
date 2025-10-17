@@ -34,15 +34,9 @@ const PromoCard = () => {
       <div className={css.buttonsWrapper}>
         <CustomLink to="/library" label="My library" type="2" />
 
-        <button
-          className={css.rightButton}
-          type="button"
-          onClick={() => console.log("doing smth")}
-        >
-          <svg className={css.promoIcon} width={24} height={24}>
-            <use href="/icons/icons.svg#icon-arrow"></use>
-          </svg>
-        </button>
+        <svg className={css.promoIcon} width={24} height={24}>
+          <use href="/icons/icons.svg#icon-arrow"></use>
+        </svg>
       </div>
     </DashboardCard>
   );
