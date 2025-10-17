@@ -19,8 +19,10 @@
   border-radius: 15px;
 }
 
-.myLibraryItemImg {
+.myLibraryImgWrapper {
   cursor: pointer;
+}
+.myLibraryItemImg {
   object-fit: cover;
   height: 208px;
   width: 137px;

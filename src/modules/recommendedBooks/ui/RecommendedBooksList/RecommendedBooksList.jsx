@@ -18,17 +18,21 @@ const RecommendedBooksList = ({ list }) => {
     <ul className={css.recommendedBooksList}>
       {list.map((book) => (
         <li className={css.recommendedBooksItem} key={book._id}>
-          {book?.imageUrl ? (
-            <img
-              className={css.recommendedBooksItemImg}
-              src={book.imageUrl}
-              alt={book.author}
-              onClick={() => onThumbClick(book._id)}
-              loading="lazy"
-            />
-          ) : (
-            <ImageStub />
-          )}
+          <div
+            className={css.recommendedBookImgWrapper}
+            onClick={() => onThumbClick(book._id)}
+          >
+            {book?.imageUrl ? (
+              <img
+                className={css.recommendedBooksItemImg}
+                src={book.imageUrl}
+                alt={book.author}
+                loading="lazy"
+              />
+            ) : (
+              <ImageStub />
+            )}
+          </div>
 
           <h3 className={css.recommendedBooksItemName} title={book.title}>
             {book.title}

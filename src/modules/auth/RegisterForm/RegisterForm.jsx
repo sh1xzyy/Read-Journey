@@ -16,6 +16,7 @@ const RegisterForm = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors, isSubmitted },
     watch,
   } = useForm({ resolver: yupResolver(registerSchema) });
@@ -23,6 +24,7 @@ const RegisterForm = () => {
   const onSubmit = async (values) => {
     try {
       const response = await dispatch(registerUserThunk(values)).unwrap();
+      reset();
       toast.success(`Welcome ${response?.name}`);
       <Navigate to="/recommended" />;
     } catch (error) {

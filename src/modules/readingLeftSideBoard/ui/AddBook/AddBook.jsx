@@ -16,6 +16,7 @@ const AddBook = ({ isReading, setIsReading }) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({ resolver: yupResolver(addBookSchema) });
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ const AddBook = ({ isReading, setIsReading }) => {
     try {
       if (isReading) {
         await dispatch(finishReadingBookThunk({ id, ...value })).unwrap();
+        reset();
         setIsReading(false);
       } else {
         await dispatch(startReadingBookThunk({ id, ...value })).unwrap();

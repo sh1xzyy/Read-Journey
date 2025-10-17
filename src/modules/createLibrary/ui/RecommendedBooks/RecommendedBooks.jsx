@@ -1,12 +1,22 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import DashboardCard from "../../../../shared/ui/DashBoardCard/DashBoardCard";
 import css from "./RecommendedBooks.module.css";
 import { selectRecommendedBooks } from "../../../../entities/book/model/selectors";
 import ImageStub from "../../../../shared/ui/ImageStub/ImageStub";
 import CustomLink from "../../../../shared/ui/CustomLink/CustomLink";
+import { useModalRecommendedBookDescriptionContext } from "../../../../context/ModalRecommendedBookDescriptionContext/useModalBookDescriptionContext";
+import { getRecommendedBooksDescription } from "../../../../entities/book/model/slice";
 
 const RecommendedBooks = ({ setCurPage }) => {
+  const dispatch = useDispatch();
   const recommendedBooks = useSelector(selectRecommendedBooks);
+  const { setIsDescriptionModalOpen } =
+    useModalRecommendedBookDescriptionContext();
+
+  const onThumbClick = (id) => {
+    dispatch(getRecommendedBooksDescription(id));
+    setIsDescriptionModalOpen(true);
+  };
 
   return (
     <DashboardCard>
@@ -14,16 +24,21 @@ const RecommendedBooks = ({ setCurPage }) => {
       <ul className={css.recommendedBooksList}>
         {recommendedBooks?.results?.map((book) => (
           <li key={book._id}>
-            {book?.imageUrl ? (
-              <img
-                className={css.recommendedBooksItemImg}
-                src={book.imageUrl}
-                alt={book?.title}
-                loading="lazy"
-              />
-            ) : (
-              <ImageStub />
-            )}
+            <div
+              className={css.recommendedBookImgWrapper}
+              onClick={() => onThumbClick(book._id)}
+            >
+              {book?.imageUrl ? (
+                <img
+                  className={css.recommendedBooksItemImg}
+                  src={book.imageUrl}
+                  alt={book?.title}
+                  loading="lazy"
+                />
+              ) : (
+                <ImageStub />
+              )}
+            </div>
             <h3 className={css.recommendedBooksItemName} title={book.title}>
               {book.title}
             </h3>

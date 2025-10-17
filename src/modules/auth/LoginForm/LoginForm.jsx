@@ -15,6 +15,7 @@ const LoginForm = () => {
   const dispatch = useDispatch();
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors, isSubmitted },
     watch,
@@ -23,6 +24,7 @@ const LoginForm = () => {
   const onSubmit = async (values) => {
     try {
       const response = await dispatch(loginUserThunk(values)).unwrap();
+      reset();
       toast.success(`Welcome ${response?.name}`);
       <Navigate to="/recommended" />;
     } catch (error) {
