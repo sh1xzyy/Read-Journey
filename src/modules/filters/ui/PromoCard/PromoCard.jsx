@@ -1,6 +1,7 @@
 import css from "./PromoCard.module.css";
 import DashboardCard from "../../../../shared/ui/DashBoardCard/DashBoardCard";
 import CustomLink from "../../../../shared/ui/CustomLink/CustomLink";
+import { Link } from "react-router-dom";
 
 const promoData = [
   {
@@ -34,9 +35,11 @@ const PromoCard = () => {
       <div className={css.buttonsWrapper}>
         <CustomLink to="/library" label="My library" type="2" />
 
-        <svg className={css.promoIcon} width={24} height={24}>
-          <use href="/icons/icons.svg#icon-arrow"></use>
-        </svg>
+        <Link to="/library">
+          <svg className={css.promoIcon} width={24} height={24}>
+            <use href="/icons/icons.svg#icon-arrow"></use>
+          </svg>
+        </Link>
       </div>
     </DashboardCard>
   );

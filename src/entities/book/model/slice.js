@@ -1,5 +1,6 @@
 import { createSlice, isAnyOf } from "@reduxjs/toolkit";
 import {
+  addBookFromRecommendsByIdThunk,
   addBookThunk,
   deleteReadingBookByIdThunk,
   finishReadingBookThunk,
@@ -109,6 +110,10 @@ const bookSlice = createSlice({
           (book) => book._id !== action.payload.id
         );
       })
+      .addCase(addBookFromRecommendsByIdThunk.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.ownBooks.push(action.payload);
+      })
       .addCase(addBookThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.ownBooks.push(action.payload);
@@ -139,6 +144,7 @@ const bookSlice = createSlice({
           startReadingBookThunk.pending,
           finishReadingBookThunk.pending,
           deleteReadingBookByIdThunk.pending,
+          addBookFromRecommendsByIdThunk.pending,
           (state) => {
             state.isLoading = true;
           }
@@ -154,6 +160,7 @@ const bookSlice = createSlice({
           startReadingBookThunk.rejected,
           finishReadingBookThunk.rejected,
           deleteReadingBookByIdThunk.rejected,
+          addBookFromRecommendsByIdThunk.rejected,
           (state) => {
             state.isLoading = false;
           }
